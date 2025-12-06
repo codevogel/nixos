@@ -1,4 +1,3 @@
-
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
@@ -56,7 +55,9 @@
     description = "Kamiel de Visser";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
+    shell = pkgs.zsh;
   };
+  programs.zsh.enable = true;
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
@@ -105,6 +106,27 @@
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     LIBVA_DRIVER_NAME = "nvidia";
   };
+
+  fonts = {
+    enableDefaultPackages = true;
+    packages = with pkgs; [
+      roboto-serif
+      plus-jakarta-sans
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-color-emoji
+      nerd-fonts.jetbrains-mono
+    ];
+    fontconfig = {
+      defaultFonts = {
+        serif = [ "Roboto Serif" ];
+        sansSerif = [ "Plus Jakarta Sans" ];
+        monospace = [ "JetBrainsMono Nerd Font Mono" ];
+      };
+    };
+  };
+
+
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

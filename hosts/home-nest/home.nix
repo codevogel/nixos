@@ -23,6 +23,8 @@
     # pkgs.hello
     pkgs.kitty
     pkgs.lazygit
+    pkgs.neovim
+    pkgs.tmux
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -70,7 +72,7 @@
   #  /etc/profiles/per-user/codevogel/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.
@@ -86,6 +88,26 @@
       name = "Kamiel de Visser";
       email = "kamieldevisser@gmail.com";
     };
+  };
+
+  programs.tmux = {
+    baseIndex = 1;
+  };
+
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+    history.size = 10000;
+    oh-my-zsh = {
+      enable = true;
+    };
+  };
+
+  programs.oh-my-posh = {
+    enable = true;
+    useTheme = "patriksvensson";
   };
 
   wayland.windowManager.hyprland.settings = {
