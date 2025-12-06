@@ -83,6 +83,8 @@
   programs.hyprland.enable = true;
   hardware.graphics.enable = true;
   hardware.nvidia.open = true;
+  hardware.nvidia.modesetting.enable = true;
+  hardware.nvidia.nvidiaSettings = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
