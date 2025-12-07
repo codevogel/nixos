@@ -14,6 +14,7 @@
       ../../modules/system/fonts.nix # Fonts
       ../../modules/system/locale.nix # Locale (time, internationalization)
       ../../modules/system/users.nix # Users
+      ../../modules/system/programs.nix # Nix program modules
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
