@@ -13,6 +13,7 @@
       ../../modules/system/networking.nix # Networking
       ../../modules/system/environment.nix # Environment (system packages, variables)
       ../../modules/system/users.nix # Users
+      ../../modules/system/keymap.nix # Keymap (for x11)
       ../../modules/system/programs.nix # Nix program modules
       ../../modules/system/fonts.nix # Fonts
       ../../modules/system/locale.nix # Locale (time, internationalization)
@@ -20,12 +21,6 @@
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "euro";
-  };
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
