@@ -18,6 +18,7 @@
       ../../modules/system/fonts.nix # Fonts
       ../../modules/system/locale.nix # Locale (time, internationalization)
       ../../modules/system/audio.nix # Audio
+      ../../modules/system/nvidia.nix # Nvidia
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -33,13 +34,6 @@
   nixpkgs.config.allowUnfree = true;
 
   programs.hyprland.enable = true;
-  hardware.graphics.enable = true;
-  hardware.nvidia.open = true;
-  hardware.nvidia.modesetting.enable = true;
-  hardware.nvidia.nvidiaSettings = true;
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
-  services.xserver.videoDrivers = [ "nvidia" ];
-
   environment.variables = {
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     LIBVA_DRIVER_NAME = "nvidia";
