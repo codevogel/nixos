@@ -1,4 +1,4 @@
-{ self, config, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -24,7 +24,6 @@
     pkgs.kitty
     pkgs.lazygit
     pkgs.tmux
-    self.packages.x64_64-linux.nvf
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -111,24 +110,27 @@
   };
 
   wayland.windowManager.hyprland.settings = {
-     "$mainMod" = "SUPER";
-     "$terminal" = "kitty";
-     bind =
-       [
-	 "$mainMod, Q, exec, $terminal"
-	 "$mainMod, M, exec, command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"
-       ]
-       ++ (
-         # workspaces
-	 # binds $mod + [ shift +] {1..9} to [move to] workspace {1..9}
-	 builtins.concatLists (builtins.genList (i:
-	    let ws = i + 1;
-	    in [
-	      "$mainMod, code:1${toString i}, workspace, ${toString ws}"
-	      "$mainMod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
-	    ]
-	  )
-	  9)
-       );
+    "$mainMod" = "SUPER";
+    "$terminal" = "kitty";
+    bind = [
+      "$mainMod, Q, exec, $terminal"
+      "$mainMod, M, exec, command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"
+    ]
+    ++ (
+      # workspaces
+      # binds $mod + [ shift +] {1..9} to [move to] workspace {1..9}
+      builtins.concatLists (
+        builtins.genList (
+          i:
+          let
+            ws = i + 1;
+          in
+          [
+            "$mainMod, code:1${toString i}, workspace, ${toString ws}"
+            "$mainMod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
+          ]
+        ) 9
+      )
+    );
   };
 }
