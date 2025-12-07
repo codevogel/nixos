@@ -15,6 +15,7 @@
       ../../modules/system/locale.nix # Locale (time, internationalization)
       ../../modules/system/users.nix # Users
       ../../modules/system/programs.nix # Nix program modules
+      ../../modules/system/audio.nix # Audio
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -34,18 +35,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # Audio
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    #jack.enable = true;
-    wireplumber.enable = true;
-  };
 
   programs.hyprland.enable = true;
   hardware.graphics.enable = true;
