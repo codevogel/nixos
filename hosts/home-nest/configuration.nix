@@ -19,6 +19,7 @@
       ../../modules/system/locale.nix # Locale (time, internationalization)
       ../../modules/system/audio.nix # Audio
       ../../modules/system/nvidia.nix # Nvidia
+      ../../modules/system/hyprland.nix # Hyprland
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -32,12 +33,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  programs.hyprland.enable = true;
-  environment.variables = {
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-    LIBVA_DRIVER_NAME = "nvidia";
-  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
