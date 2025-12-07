@@ -23,7 +23,6 @@
     # pkgs.hello
     pkgs.kitty
     pkgs.lazygit
-    pkgs.neovim
     pkgs.tmux
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
@@ -103,6 +102,14 @@
     oh-my-zsh = {
       enable = true;
     };
+  };
+
+  programs.neovim = {
+    enable = true;
+    extraLuaConfig =
+      ''
+      vim.g.editorconfig = true
+      '';
   };
 
   programs.oh-my-posh = {
