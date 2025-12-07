@@ -1,6 +1,8 @@
-{ pkgs, lib, ... }:
-
 {
+  pkgs,
+  lib,
+  ...
+}: {
   vim = {
     theme = {
       enable = true;
@@ -8,7 +10,7 @@
       style = "dark";
     };
 
-    statusline.lualine.enable z true;
+    statusline.lualine.enable = true;
 
     languages = {
       enableLSP = true;
@@ -17,3 +19,4 @@
       nix.enable = true;
     };
   };
+}

@@ -25,7 +25,7 @@
       .neovim;
     };
     nixosConfigurations.home-nest = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs; };
+      specialArgs = { inherit inputs self; };
       modules = [
         ./hosts/home-nest/configuration.nix
         inputs.home-manager.nixosModules.default
