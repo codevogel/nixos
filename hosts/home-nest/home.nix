@@ -89,6 +89,10 @@
     };
   };
 
+  programs.nvf = {
+    enable = true;
+  };
+
   programs.tmux = {
     baseIndex = 1;
   };
@@ -102,14 +106,6 @@
     oh-my-zsh = {
       enable = true;
     };
-  };
-
-  programs.neovim = {
-    enable = true;
-    extraLuaConfig =
-      ''
-      vim.g.editorconfig = true
-      '';
   };
 
   programs.oh-my-posh = {

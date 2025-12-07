@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
+      inputs.nvf.nixosModules.default
       ../../modules/system/boot.nix # Boot options (loader, kernel)
       ../../modules/system/networking.nix # Networking
       ../../modules/system/environment.nix # Environment (system packages, variables)
@@ -20,6 +21,7 @@
       ../../modules/system/audio.nix # Audio
       ../../modules/system/nvidia.nix # Nvidia
       ../../modules/system/hyprland.nix # Hyprland
+
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

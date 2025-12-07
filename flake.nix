@@ -8,16 +8,28 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nvf = {
+      url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
-    # use "nixos", or your hostname as the name of the configuration
-    # it's a better practice than "default" shown in the video
+    packages.x86_64-linux = {
+      nvf =
+      (inputs.nvf.lib.neovimConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        modules = [ ./modules/nvf/nvf-config.nix ];
+      })
+      .neovim;
+    };
     nixosConfigurations.home-nest = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
         ./hosts/home-nest/configuration.nix
         inputs.home-manager.nixosModules.default
+        inputs.nvf.nixosModules.default
       ];
     };
   };
