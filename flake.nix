@@ -29,7 +29,6 @@
       modules = [
         ./hosts/home-nest/configuration.nix
         inputs.home-manager.nixosModules.default
-        inputs.nvf.nixosModules.default
       ];
     };
   };

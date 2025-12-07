@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ self, config, pkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -24,6 +24,7 @@
     pkgs.kitty
     pkgs.lazygit
     pkgs.tmux
+    self.packages.x64_64-linux.nvf
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -87,10 +88,6 @@
       name = "Kamiel de Visser";
       email = "kamieldevisser@gmail.com";
     };
-  };
-
-  programs.nvf = {
-    enable = true;
   };
 
   programs.tmux = {

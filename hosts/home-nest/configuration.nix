@@ -9,7 +9,6 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
-      inputs.nvf.nixosModules.default
       ../../modules/system/boot.nix # Boot options (loader, kernel)
       ../../modules/system/networking.nix # Networking
       ../../modules/system/environment.nix # Environment (system packages, variables)
