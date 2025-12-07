@@ -18,5 +18,19 @@
 
       nix.enable = true;
     };
+
+    autocomplete = {
+      blink-cmp = {
+        enable = true;
+        friendly-snippets.enable = true;
+      };
+    };
+
+    diagnostics = {
+      enable = true;
+      config = {
+        virtual_lines = true;
+      };
+    };
   };
 }
