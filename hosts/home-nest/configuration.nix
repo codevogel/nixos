@@ -26,7 +26,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs self; };
+    extraSpecialArgs = { inherit self inputs; };
     users = {
       "codevogel" = import ./home.nix;
     };
