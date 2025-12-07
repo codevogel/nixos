@@ -11,16 +11,12 @@
       inputs.home-manager.nixosModules.default
       ../../modules/system/fonts.nix
       ../../modules/system/boot.nix
+      ../../modules/system/networking.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  networking.hostName = "home-nest"; # Define your hostname.
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  # Set your time zone.
+    # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
 
   # Select internationalisation properties.
