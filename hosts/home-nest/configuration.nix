@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{ self, config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -26,7 +26,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = { inherit inputs self; };
     users = {
       "codevogel" = import ./home.nix;
     };
