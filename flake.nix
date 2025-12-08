@@ -37,6 +37,10 @@
               pkgs.vimPlugins.snacks-nvim
               pkgs.vimPlugins.lualine-nvim
               pkgs.vimPlugins.nvim-web-devicons
+              {
+                pname = "harpoon";
+                src = pkgs.vimPlugins.harpoon2;
+              }
             ];
 
             dev.codevogel = {
