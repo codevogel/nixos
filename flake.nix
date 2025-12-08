@@ -23,11 +23,19 @@
       {
         mnw = mnw.lib.wrap pkgs {
           neovim = pkgs.neovim-unwrapped;
-          initLua = ''
-            require('codevogel')
-          '';
+
+          luaFiles = [ ./modules/nvim/lua/codevogel/init.lua ];
+          
           plugins = {
-            start = [ pkgs.vimPlugins.oil-nvim ];
+            start = [ 
+              pkgs.vimPlugins.lazy-nvim
+              pkgs.vimPlugins.plenary-nvim
+            ];
+
+            opt = [
+              pkgs.vimPlugins.oil-nvim
+            ];
+
             dev.codevogel = {
               pure = ./modules/nvim;
               impure = "/home/codevogel/nixos/modules/nvim";
