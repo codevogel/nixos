@@ -34,6 +34,7 @@
 
             opt = [
               pkgs.vimPlugins.oil-nvim
+              pkgs.vimPlugins.snacks-nvim
             ];
 
             dev.codevogel = {
