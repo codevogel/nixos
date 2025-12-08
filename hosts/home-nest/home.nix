@@ -24,7 +24,7 @@
     pkgs.kitty
     pkgs.lazygit
     pkgs.tmux
-    self.packages.x86_64-linux.nvf
+    self.packages.x86_64-linux.mnw
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the

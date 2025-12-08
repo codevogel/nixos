@@ -9,21 +9,35 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nvf = {
-      url = "github:notashelf/nvf/v0.8";
+    mnw = {
+      url = "github:Gerg-L/mnw";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
-    packages.x86_64-linux = {
-      nvf =
-      (inputs.nvf.lib.neovimConfiguration {
+  outputs = { self, nixpkgs, mnw, ... }@inputs: {
+    packages.x86_64-linux =
+      let
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        modules = [ ./modules/nvf/nvf-config.nix ];
-      })
-      .neovim;
-    };
+      in
+      {
+        mnw = mnw.lib.wrap pkgs {
+          neovim = pkgs.neovim-unwrapped;
+          initLua = ''
+            require('cfg')
+          '';
+          plugins = {
+            start = [ pkgs.vimPlugins.oil-nvim ];
+            dev.myconfig = {
+              pure = ./modules/nvim;
+              impure = "/home/codevogel/nixos/modules/nvim";
+            };
+          };
+        };
+
+        dev = self.packages.x86_64-linux.default.devMode;
+      };
+
     nixosConfigurations.home-nest = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs self; };
       modules = [
