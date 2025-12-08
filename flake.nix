@@ -35,6 +35,8 @@
             opt = [
               pkgs.vimPlugins.oil-nvim
               pkgs.vimPlugins.snacks-nvim
+              pkgs.vimPlugins.lualine-nvim
+              pkgs.vimPlugins.nvim-web-devicons
             ];
 
             dev.codevogel = {
