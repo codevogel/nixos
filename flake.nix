@@ -13,9 +13,14 @@
       url = "github:Gerg-L/mnw";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, mnw, ... }@inputs: {
+  outputs = { self, nixpkgs, mnw, nur, ... }@inputs: {
     packages.x86_64-linux =
       let
         pkgs = nixpkgs.legacyPackages.x86_64-linux;

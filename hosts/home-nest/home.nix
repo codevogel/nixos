@@ -1,5 +1,8 @@
-{ self, config, pkgs, ... }:
+{ self, config, pkgs, inputs, ... }:
 
+let
+  firefoxAddons = inputs.nur.legacyPackages.${pkgs.system}.repos.rycee.firefox-addons;
+in
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -39,6 +42,7 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
+  
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -110,12 +114,38 @@
     useTheme = "patriksvensson";
   };
 
+  programs.firefox = {
+    enable = true;
+
+    profiles.default = {
+      settings = {
+        extensions = {
+          autoDisableScopes = 0;
+          update = {
+            autoUpdateDefault = false;
+            enabled = false;
+          };
+        };
+      };
+
+      extensions = {
+        packages = [
+          firefoxAddons.bitwarden
+          firefoxAddons.ublock-origin
+          firefoxAddons.darkreader
+        ];
+      };
+    };
+  };
+
   wayland.windowManager.hyprland.settings = {
      "$mainMod" = "SUPER";
      "$terminal" = "kitty";
+     "$browser" = "firefox";
      bind =
        [
 	 "$mainMod, Q, exec, $terminal"
+	 "$mainMod, B, exec, $browser"
 	 "$mainMod, M, exec, command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"
        ]
        ++ (
