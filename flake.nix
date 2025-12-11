@@ -29,19 +29,22 @@
           plugins = {
             start = [ 
               pkgs.vimPlugins.lazy-nvim
-              pkgs.vimPlugins.plenary-nvim
             ];
+
+            startAttrs = {
+              "plenary.nvim" = pkgs.vimPlugins.plenary-nvim;
+            };
 
             opt = [
               pkgs.vimPlugins.oil-nvim
               pkgs.vimPlugins.snacks-nvim
               pkgs.vimPlugins.lualine-nvim
               pkgs.vimPlugins.nvim-web-devicons
-              {
-                pname = "harpoon";
-                src = pkgs.vimPlugins.harpoon2;
-              }
             ];
+
+            optAttrs = {
+              harpoon = pkgs.vimPlugins.harpoon2;
+            };
 
             dev.codevogel = {
               pure = ./modules/nvim;
