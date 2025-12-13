@@ -57,4 +57,4 @@ else
   })
 end
 
-vim.cmd("colorscheme kanagawa")
+require ('codevogel.init')
