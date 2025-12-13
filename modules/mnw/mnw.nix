@@ -8,6 +8,10 @@
     luaFiles = [ ./nvim/init.lua ];
 
     extraBinPath = with pkgs; [
+      ripgrep
+      fzf
+
+      # LSP:
       lua-language-server
     ];
 
