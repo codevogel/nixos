@@ -1,4 +1,4 @@
-{ config, pkgs, ...}:
+{ pkgs, ... }:
 
 {
   fonts = {
@@ -17,6 +17,6 @@
         sansSerif = [ "Plus Jakarta Sans" ];
         monospace = [ "JetBrainsMono Nerd Font Mono" ];
       };
-    }; 
+    };
   };
 }

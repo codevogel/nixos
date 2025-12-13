@@ -1,9 +1,7 @@
 return {
   "ThePrimeagen/harpoon",
   branch = "harpoon2",
-  if mnw == nil then
-     dependencies = { "nvim-lua/plenary.nvim" },
-  end,
+  dependencies = { "nvim-lua/plenary.nvim" },
   keys = function()
     local harpoon = require("harpoon")
     return {
