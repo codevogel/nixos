@@ -154,7 +154,7 @@ in
         # Quit Hyprland
         "$mainMod SHIFT, Q, exec, command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"
 
-        # Launch programs 
+        # Launch programs
         "$mainMod, Return, exec, $terminal"
         "$mainMod, B, exec, $browser"
         "$mainMod, M, exec, spotify"
@@ -210,5 +210,5 @@ in
         };
       };
     };
-  }; 
+  };
 }

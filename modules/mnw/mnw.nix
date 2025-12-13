@@ -1,5 +1,9 @@
 # modules/mnw.nix
-{ pkgs, mnw, self }:
+{
+  pkgs,
+  mnw,
+  self,
+}:
 
 {
   mnw = mnw.lib.wrap pkgs {
@@ -32,7 +36,7 @@
         pkgs.vimPlugins.lazy-nvim
       ];
 
-      # Anything that is loaded by Lazy.nvim needs to be in opt 
+      # Anything that is loaded by Lazy.nvim needs to be in opt
       # use 'lazy = false' in the lazy spec to not lazy-load any plugins
       # that are configured through Lazy.nvim
       opt = [
@@ -82,4 +86,3 @@
 
   dev = self.packages.x86_64-linux.mnw.devMode;
 }
-

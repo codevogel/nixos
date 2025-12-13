@@ -18,23 +18,28 @@
   };
 
   outputs =
-  { self, nixpkgs, mnw, ... }@inputs:
-  {
-    packages.x86_64-linux =
-      let
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        mnwPackages = import ./modules/mnw/mnw.nix {
-          inherit pkgs mnw self;
-        };
-      in
-      mnwPackages;
+    {
+      self,
+      nixpkgs,
+      mnw,
+      ...
+    }@inputs:
+    {
+      packages.x86_64-linux =
+        let
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          mnwPackages = import ./modules/mnw/mnw.nix {
+            inherit pkgs mnw self;
+          };
+        in
+        mnwPackages;
 
-    nixosConfigurations.home-nest = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs self; };
-      modules = [
-        ./hosts/home-nest/configuration.nix
-        inputs.home-manager.nixosModules.default
-      ];
+      nixosConfigurations.home-nest = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs self; };
+        modules = [
+          ./hosts/home-nest/configuration.nix
+          inputs.home-manager.nixosModules.default
+        ];
+      };
     };
-  };
 }
