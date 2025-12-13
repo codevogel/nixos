@@ -56,3 +56,5 @@ else
     },
   })
 end
+
+vim.cmd("colorscheme kanagawa")

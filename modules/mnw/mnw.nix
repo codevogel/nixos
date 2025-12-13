@@ -30,6 +30,14 @@
         pkgs.vimPlugins.lualine-nvim
         pkgs.vimPlugins.nvim-web-devicons
         pkgs.vimPlugins.friendly-snippets
+        pkgs.vimPlugins.bufferline-nvim # dep: nvim-web-devicons
+        pkgs.vimPlugins.nvim-lint
+        pkgs.vimPlugins.nvim-lspconfig
+        pkgs.vimPlugins.nvim-treesitter-textobjects
+        pkgs.vimPlugins.nvim-treesitter
+        pkgs.vimPlugins.nvim-ts-autotag
+        pkgs.vimPlugins.nvim-ts-context-commentstring
+        pkgs.vimPlugins.nvim-notify
       ];
 
       # We can use optAttrs to rename plugins to their expected name
@@ -37,6 +45,19 @@
       optAttrs = {
         harpoon = pkgs.vimPlugins.harpoon2;
         "blink.cmp" = pkgs.vimPlugins.blink-cmp;
+        "conform.nvim" = pkgs.vimPlugins.conform-nvim;
+        "kanagawa.nvim" = pkgs.vimPlugins.kanagawa-nvim;
+        "lazydev.nvim" = pkgs.vimPlugins.lazydev-nvim;
+        "mini.ai" = pkgs.vimPlugins.mini-ai;
+        "mini.comment" = pkgs.vimPlugins.mini-comment;
+        "mini.icons" = pkgs.vimPlugins.mini-icons;
+        "noice.nvim" = pkgs.vimPlugins.noice-nvim; # deps: nui-nvim nvim-notify
+        "persistence.nvim" = pkgs.vimPlugins.persistence-nvim;
+        "todo-comments.nvim" = pkgs.vimPlugins.todo-comments-nvim;
+        "ts-comments.nvim" = pkgs.vimPlugins.ts-comments-nvim;
+        "which-key.nvim" = pkgs.vimPlugins.which-key-nvim;
+        "gitsigns.nvim" = pkgs.vimPlugins.gitsigns-nvim;
+        "nui.nvim" = pkgs.vimPlugins.nui-nvim;
       };
 
       dev.codevogel = {
