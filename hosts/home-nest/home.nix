@@ -163,6 +163,10 @@ in
       "SUPER, code:21, resizeactive, 100 0"  # = key
       "SUPER SHIFT, code:20, resizeactive, 0 -100"
       "SUPER SHIFT, code:21, resizeactive, 0 100"
+
+      # Cycle through windows with mouse wheel
+      "SUPER, mouse_down, workspace, e+1"
+      "SUPER, mouse_up, workspace, e-1"
     ]
     ++ (
       # workspaces
