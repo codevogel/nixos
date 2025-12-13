@@ -9,10 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    mnw = {
-      url = "github:Gerg-L/mnw";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    mnw.url = "github:Gerg-L/mnw";
 
     nur = {
       url = "github:nix-community/NUR";
@@ -36,18 +33,15 @@
           mnw = mnw.lib.wrap pkgs {
             neovim = pkgs.neovim-unwrapped;
 
-            luaFiles = [ ./modules/nvim/lua/codevogel/init.lua ];
+            luaFiles = [ ./modules/nvim/init.lua ];
 
             plugins = {
               start = [
                 pkgs.vimPlugins.lazy-nvim
               ];
 
-              startAttrs = {
-                "plenary.nvim" = pkgs.vimPlugins.plenary-nvim;
-              };
-
               opt = [
+                pkgs.vimPlugins.plenary-nvim
                 pkgs.vimPlugins.oil-nvim
                 pkgs.vimPlugins.snacks-nvim
                 pkgs.vimPlugins.lualine-nvim
@@ -65,7 +59,7 @@
             };
           };
 
-          dev = self.packages.x86_64-linux.default.devMode;
+          dev = self.packages.x86_64-linux.mnw.devMode;
         };
 
       nixosConfigurations.home-nest = nixpkgs.lib.nixosSystem {
