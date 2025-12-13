@@ -149,7 +149,8 @@ in
     bind = [
       "$mainMod, Q, exec, $terminal"
       "$mainMod, B, exec, $browser"
-      "$mainMod, M, exec, command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"
+      "$mainMod, M, exec, spotify"
+      "$mainMod SHIFT, Q, exec, command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"
     ]
     ++ (
       # workspaces

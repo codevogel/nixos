@@ -10,6 +10,7 @@
       neovim
       fzf
       home-manager
+      spotify
     ];
 
     variables = {
