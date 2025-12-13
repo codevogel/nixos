@@ -147,10 +147,22 @@ in
     "$terminal" = "kitty";
     "$browser" = "firefox";
     bind = [
-      "$mainMod, Q, exec, $terminal"
+      # Close windows
+      "$mainMod SHIFT, C, killactive"
+
+      # Quit Hyprland
+      "$mainMod SHIFT, Q, exec, command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"
+
+      # Launch programs 
+      "$mainMod, Return, exec, $terminal"
       "$mainMod, B, exec, $browser"
       "$mainMod, M, exec, spotify"
-      "$mainMod SHIFT, Q, exec, command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"
+
+      # Resize windows
+      "SUPER, code:20, resizeactive, -100 0" # - key
+      "SUPER, code:21, resizeactive, 100 0"  # = key
+      "SUPER SHIFT, code:20, resizeactive, 0 -100"
+      "SUPER SHIFT, code:21, resizeactive, 0 100"
     ]
     ++ (
       # workspaces
