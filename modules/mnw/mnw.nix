@@ -13,6 +13,7 @@
 
       # LSP:
       lua-language-server
+      nixd
 
       # Formatters:
       stylua
