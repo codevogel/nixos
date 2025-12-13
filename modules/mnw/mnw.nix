@@ -13,6 +13,9 @@
 
       # LSP:
       lua-language-server
+
+      # Formatters:
+      stylua
     ];
 
     # Along with listing the package here, each plugin should also be
