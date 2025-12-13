@@ -166,7 +166,7 @@ in
     ]
     ++ (
       # workspaces
-      # binds $mod + [ shift +] {1..9} to [move to] workspace {1..9}
+      # binds $mod + [ shift +] {1..5} to [move to] workspace {1..5}
       builtins.concatLists (
         builtins.genList (
           i:
@@ -177,7 +177,7 @@ in
             "$mainMod, code:1${toString i}, workspace, ${toString ws}"
             "$mainMod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
           ]
-        ) 9
+        ) 5
       )
     );
   };
