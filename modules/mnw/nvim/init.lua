@@ -57,4 +57,4 @@ else
   })
 end
 
-require ('codevogel.init')
+require("codevogel.init")

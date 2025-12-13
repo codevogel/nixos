@@ -44,19 +44,19 @@ local config = {
         extensions = {},
       })
     end,
-  }
+  },
 }
 
 if mnw == nil then
-table.insert(plugins, {
-"letieu/harpoon-lualine",
-dependencies = {
-  {
-    "ThePrimeagen/harpoon",
-    branch = "harpoon2",
-  },
-},
-})
+  table.insert(plugins, {
+    "letieu/harpoon-lualine",
+    dependencies = {
+      {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+      },
+    },
+  })
 end
 
 return config
