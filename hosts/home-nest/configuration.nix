@@ -2,28 +2,31 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ self, config, pkgs, inputs, ... }:
+{ self, inputs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
-      ../../modules/system/boot.nix # Boot options (loader, kernel)
-      ../../modules/system/networking.nix # Networking
-      ../../modules/system/environment.nix # Environment (system packages, variables)
-      ../../modules/system/users.nix # Users
-      ../../modules/system/keymap.nix # Keymap (for x11)
-      ../../modules/system/programs.nix # Nix program modules
-      ../../modules/system/fonts.nix # Fonts
-      ../../modules/system/locale.nix # Locale (time, internationalization)
-      ../../modules/system/audio.nix # Audio
-      ../../modules/system/nvidia.nix # Nvidia
-      ../../modules/system/hyprland.nix # Hyprland
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
+    ../../modules/system/boot.nix # Boot options (loader, kernel)
+    ../../modules/system/networking.nix # Networking
+    ../../modules/system/environment.nix # Environment (system packages, variables)
+    ../../modules/system/users.nix # Users
+    ../../modules/system/keymap.nix # Keymap (for x11)
+    ../../modules/system/programs.nix # Nix program modules
+    ../../modules/system/fonts.nix # Fonts
+    ../../modules/system/locale.nix # Locale (time, internationalization)
+    ../../modules/system/audio.nix # Audio
+    ../../modules/system/nvidia.nix # Nvidia
+    ../../modules/system/hyprland.nix # Hyprland
 
-    ];
+  ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   home-manager = {
     extraSpecialArgs = { inherit self inputs; };

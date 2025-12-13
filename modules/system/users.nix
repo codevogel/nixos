@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   # The 'shell' opt requires programs.<shell>.enable = true in ./programs.nix
@@ -9,8 +9,11 @@
     codevogel = {
       isNormalUser = true;
       description = "codevogel";
-      extraGroups = [ "networkmanager" "wheel" ];
-      packages = with pkgs; [];
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+      ];
+      packages = with pkgs; [ ];
       shell = pkgs.zsh;
     };
   };

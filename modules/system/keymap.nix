@@ -1,4 +1,4 @@
-{ config, ... }:
+{ ... }:
 
 {
   # Set keymap for x11

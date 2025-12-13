@@ -1,4 +1,9 @@
-{ self, config, pkgs, inputs, ... }:
+{
+  self,
+  pkgs,
+  inputs,
+  ...
+}:
 
 let
   firefoxAddons = inputs.nur.legacyPackages.${pkgs.system}.repos.rycee.firefox-addons;
@@ -42,7 +47,6 @@ in
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
-  
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -139,26 +143,29 @@ in
   };
 
   wayland.windowManager.hyprland.settings = {
-     "$mainMod" = "SUPER";
-     "$terminal" = "kitty";
-     "$browser" = "firefox";
-     bind =
-       [
-	 "$mainMod, Q, exec, $terminal"
-	 "$mainMod, B, exec, $browser"
-	 "$mainMod, M, exec, command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"
-       ]
-       ++ (
-         # workspaces
-	 # binds $mod + [ shift +] {1..9} to [move to] workspace {1..9}
-	 builtins.concatLists (builtins.genList (i:
-	    let ws = i + 1;
-	    in [
-	      "$mainMod, code:1${toString i}, workspace, ${toString ws}"
-	      "$mainMod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
-	    ]
-	  )
-	  9)
-       );
+    "$mainMod" = "SUPER";
+    "$terminal" = "kitty";
+    "$browser" = "firefox";
+    bind = [
+      "$mainMod, Q, exec, $terminal"
+      "$mainMod, B, exec, $browser"
+      "$mainMod, M, exec, command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"
+    ]
+    ++ (
+      # workspaces
+      # binds $mod + [ shift +] {1..9} to [move to] workspace {1..9}
+      builtins.concatLists (
+        builtins.genList (
+          i:
+          let
+            ws = i + 1;
+          in
+          [
+            "$mainMod, code:1${toString i}, workspace, ${toString ws}"
+            "$mainMod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
+          ]
+        ) 9
+      )
+    );
   };
 }

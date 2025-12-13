@@ -20,53 +20,60 @@
     };
   };
 
-  outputs = { self, nixpkgs, mnw, nur, ... }@inputs: {
-    packages.x86_64-linux =
-      let
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      in
-      {
-        mnw = mnw.lib.wrap pkgs {
-          neovim = pkgs.neovim-unwrapped;
+  outputs =
+    {
+      self,
+      nixpkgs,
+      mnw,
+      ...
+    }@inputs:
+    {
+      packages.x86_64-linux =
+        let
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        in
+        {
+          mnw = mnw.lib.wrap pkgs {
+            neovim = pkgs.neovim-unwrapped;
 
-          luaFiles = [ ./modules/nvim/lua/codevogel/init.lua ];
-          
-          plugins = {
-            start = [ 
-              pkgs.vimPlugins.lazy-nvim
-            ];
+            luaFiles = [ ./modules/nvim/lua/codevogel/init.lua ];
 
-            startAttrs = {
-              "plenary.nvim" = pkgs.vimPlugins.plenary-nvim;
-            };
+            plugins = {
+              start = [
+                pkgs.vimPlugins.lazy-nvim
+              ];
 
-            opt = [
-              pkgs.vimPlugins.oil-nvim
-              pkgs.vimPlugins.snacks-nvim
-              pkgs.vimPlugins.lualine-nvim
-              pkgs.vimPlugins.nvim-web-devicons
-            ];
+              startAttrs = {
+                "plenary.nvim" = pkgs.vimPlugins.plenary-nvim;
+              };
 
-            optAttrs = {
-              harpoon = pkgs.vimPlugins.harpoon2;
-            };
+              opt = [
+                pkgs.vimPlugins.oil-nvim
+                pkgs.vimPlugins.snacks-nvim
+                pkgs.vimPlugins.lualine-nvim
+                pkgs.vimPlugins.nvim-web-devicons
+              ];
 
-            dev.codevogel = {
-              pure = ./modules/nvim;
-              impure = "/home/codevogel/nixos/modules/nvim";
+              optAttrs = {
+                harpoon = pkgs.vimPlugins.harpoon2;
+              };
+
+              dev.codevogel = {
+                pure = ./modules/nvim;
+                impure = "/home/codevogel/nixos/modules/nvim";
+              };
             };
           };
+
+          dev = self.packages.x86_64-linux.default.devMode;
         };
 
-        dev = self.packages.x86_64-linux.default.devMode;
+      nixosConfigurations.home-nest = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs self; };
+        modules = [
+          ./hosts/home-nest/configuration.nix
+          inputs.home-manager.nixosModules.default
+        ];
       };
-
-    nixosConfigurations.home-nest = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs self; };
-      modules = [
-        ./hosts/home-nest/configuration.nix
-        inputs.home-manager.nixosModules.default
-      ];
     };
-  };
 }

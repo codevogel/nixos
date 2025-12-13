@@ -1,4 +1,4 @@
-{ config, pks, lib, ... }:
+{ config, lib, ... }:
 
 {
   hardware.graphics.enable = true;
@@ -8,7 +8,7 @@
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
   services.xserver.videoDrivers = [ "nvidia" ];
 
-  # These are for Hyprland but might be useful for other programs too(?) 
+  # These are for Hyprland but might be useful for other programs too(?)
   environment.variables = {
     __GLX_VENDOR_LIBRARY_NAME = lib.mkDefault "nvidia";
     LIBVA_DRIVER_NAME = lib.mkDefault "nvidia";
