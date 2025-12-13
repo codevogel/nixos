@@ -7,6 +7,10 @@
 
     luaFiles = [ ./nvim/init.lua ];
 
+    extraBinPath = with pkgs; [
+      lua-language-server
+    ];
+
     # Along with listing the package here, each plugin should also be
     # defined through lua as per the Lazy.nvim spec
     #
