@@ -79,6 +79,7 @@
         "which-key.nvim" = pkgs.vimPlugins.which-key-nvim;
         "gitsigns.nvim" = pkgs.vimPlugins.gitsigns-nvim;
         "nui.nvim" = pkgs.vimPlugins.nui-nvim;
+        "fidget.nvim" = pkgs.vimPlugins.fidget-nvim;
       };
 
       dev.codevogel = {
