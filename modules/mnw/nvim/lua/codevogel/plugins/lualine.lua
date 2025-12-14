@@ -1,5 +1,4 @@
-local config = {
-  {
+local lualine = {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
@@ -44,11 +43,9 @@ local config = {
         extensions = {},
       })
     end,
-  },
-}
+  }
 
-if mnw == nil then
-  table.insert(plugins, {
+local harpoonDeps = {
     "letieu/harpoon-lualine",
     dependencies = {
       {
@@ -56,7 +53,10 @@ if mnw == nil then
         branch = "harpoon2",
       },
     },
-  })
+  }
+
+if mnw == nil then
+  table.insert(lualine.dependencies, harpoonDeps)
 end
 
-return config
+return lualine
