@@ -36,6 +36,10 @@
         pkgs.vimPlugins.lazy-nvim
       ];
 
+      startAttrs = {
+        nvim-treesitter = null;
+      };
+
       # Anything that is loaded by Lazy.nvim needs to be in opt
       # use 'lazy = false' in the lazy spec to not lazy-load any plugins
       # that are configured through Lazy.nvim
@@ -50,8 +54,8 @@
         pkgs.vimPlugins.bufferline-nvim # dep: nvim-web-devicons
         pkgs.vimPlugins.nvim-lint
         pkgs.vimPlugins.nvim-lspconfig
-        pkgs.vimPlugins.nvim-treesitter-textobjects
         pkgs.vimPlugins.nvim-treesitter
+        pkgs.vimPlugins.nvim-treesitter-textobjects
         pkgs.vimPlugins.nvim-ts-autotag
         pkgs.vimPlugins.nvim-ts-context-commentstring
         pkgs.vimPlugins.nvim-notify
