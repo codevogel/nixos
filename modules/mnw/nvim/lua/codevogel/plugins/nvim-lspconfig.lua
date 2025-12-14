@@ -108,6 +108,14 @@ local lspconfig = {
           },
         },
       },
+      svelte = {
+        capabilities = { workspace = { didChangeWatchedFiles = false } },
+        settings = {
+          lint = { unknownAtRules = "ignore" },
+          typescript = { enable = true, preferences = { importModuleSpecifier = "non-relative" } },
+          javascript = { enable = true, preferences = { importModuleSpecifier = "non-relative" } },
+        },
+      },
     }
 
     -- Holds servers that should only be available on Non-nix systems
