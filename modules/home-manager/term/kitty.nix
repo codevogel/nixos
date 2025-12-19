@@ -1,5 +1,8 @@
 { pkgs, ... }:
 
+let
+  themeKanagawa = import ./themes/kanagawa.nix;
+in
 {
   home.packages = [
     pkgs.kitty
@@ -16,6 +19,7 @@
       bold_font = "auto";
       italic_font = "auto";
       bold_italic_font = "auto";
-    };
+    }
+    // themeKanagawa;
   };
 }
