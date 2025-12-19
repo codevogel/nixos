@@ -18,6 +18,8 @@
       # LSP:
       lua-language-server
       nixd
+      bash-language-server
+      shellcheck
 
       # Formatters:
       stylua
