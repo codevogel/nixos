@@ -2,12 +2,15 @@ return {
   "neovim/nvim-lspconfig",
   lazy = false,
   config = function()
+    -- Servers to enable, with their config.
+    -- Empty configs use the nvim-lspconfig defaults.
     local servers = {
       lua_ls = {},
       bashls = {},
     }
 
-    for server_name, opts in pairs(servers) do
+    for server_name, cfg in pairs(servers) do
+      vim.lsp.config(server_name, cfg)
       vim.lsp.enable(server_name)
     end
   end,
