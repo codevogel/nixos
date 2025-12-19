@@ -33,7 +33,6 @@
           };
         in
         mnwPackages;
-
       nixosConfigurations.home-nest = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs self; };
         modules = [

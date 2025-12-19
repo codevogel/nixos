@@ -9,6 +9,10 @@ let
   firefoxAddons = inputs.nur.legacyPackages.${pkgs.system}.repos.rycee.firefox-addons;
 in
 {
+  imports = [
+    ../../modules/home-manager/term/kitty.nix
+  ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "codevogel";
@@ -29,7 +33,6 @@ in
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
-    pkgs.kitty
     pkgs.lazygit
     pkgs.tmux
     self.packages.x86_64-linux.mnw
@@ -86,7 +89,6 @@ in
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  programs.kitty.enable = true;
   wayland.windowManager.hyprland.enable = true;
   home.sessionVariables.NIXOS_OZONE_WL = "1";
 
