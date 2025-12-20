@@ -7,6 +7,7 @@ return {
     local servers = {
       lua_ls = {},
       bashls = {},
+      nixd = {},
     }
 
     for server_name, cfg in pairs(servers) do
