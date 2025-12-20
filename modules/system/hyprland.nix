@@ -13,4 +13,6 @@
 
   # Note: Hyprland (may) require nvidia drivers
   #       Those are listed in ./nvidia.nix
+
+  # Hyprland conf is in ../../modules/home-manager/wm/hyprland.nix
 }
