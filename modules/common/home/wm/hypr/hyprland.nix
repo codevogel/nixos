@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./waybar.nix
+    ./waybar/waybar.nix
   ];
 
   # Hint electron apps to use WL
