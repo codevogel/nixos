@@ -61,6 +61,18 @@
         pkgs.vimPlugins.nvim-ts-autotag
         pkgs.vimPlugins.nvim-ts-context-commentstring
         pkgs.vimPlugins.nvim-notify
+
+        {
+          pname = "harpoon-lualine";
+
+          src = pkgs.fetchFromGitHub {
+            owner = "letieu";
+            repo = "harpoon-lualine";
+            rev = "215c0847dfb787b19268f7b42eed83bdcf06b966";
+            hash = "sha256-HGbz/b2AVl8145BCy8I47dDrhBVMSQQIr+mWbOrmj5Q=";
+          };
+
+        }
       ];
 
       # We can use optAttrs to rename plugins to their expected name
