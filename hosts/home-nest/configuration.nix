@@ -9,17 +9,17 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
-    ../../modules/system/boot.nix # Boot options (loader, kernel)
-    ../../modules/system/networking.nix # Networking
-    ../../modules/system/environment.nix # Environment (system packages, variables)
-    ../../modules/system/users.nix # Users
-    ../../modules/system/keymap.nix # Keymap (for x11)
-    ../../modules/system/programs.nix # Nix program modules
-    ../../modules/system/fonts.nix # Fonts
-    ../../modules/system/locale.nix # Locale (time, internationalization)
-    ../../modules/system/audio.nix # Audio
-    ../../modules/system/nvidia.nix # Nvidia
-    ../../modules/system/hyprland.nix # Hyprland
+    ../../modules/common/system/boot.nix # Boot options (loader, kernel)
+    ../../modules/common/system/networking.nix # Networking
+    ../../modules/common/system/environment.nix # Environment (system packages, variables)
+    ../../modules/common/system/users.nix # Users
+    ../../modules/common/system/keymap.nix # Keymap (for x11)
+    ../../modules/common/system/programs.nix # Nix program modules
+    ../../modules/common/system/fonts.nix # Fonts
+    ../../modules/common/system/locale.nix # Locale (time, internationalization)
+    ../../modules/common/system/audio.nix # Audio
+    ../../modules/common/system/nvidia.nix # Nvidia
+    ../../modules/common/system/hyprland.nix # Hyprland
 
   ];
 

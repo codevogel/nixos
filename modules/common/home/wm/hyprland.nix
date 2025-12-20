@@ -1,7 +1,11 @@
 { ... }:
 
 {
+  # Hint electron apps to use WL
+  home.sessionVariables.NIXOS_OZONE_WL = "1";
+
   wayland.windowManager.hyprland = {
+    enable = true;
     settings = {
       "$mainMod" = "SUPER";
       "$terminal" = "kitty";

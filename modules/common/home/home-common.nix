@@ -1,0 +1,32 @@
+{
+  ...
+}:
+
+{
+  imports = [
+    ./terminal/emulator/kitty/kitty.nix
+    ./terminal/tmux/tmux.nix
+    ./shell/git/git.nix
+    ./shell/git/lazygit.nix
+    ./shell/zsh/zsh.nix
+    ./shell/oh-my-posh/oh-my-posh.nix
+    ./browser/firefox/firefox.nix
+    ./editor/nvim/nvim.nix
+    ./wm/hyprland.nix
+  ];
+
+  # Home Manager needs a bit of information about you and the paths it should
+  # manage.
+  home.username = "codevogel";
+  home.homeDirectory = "/home/codevogel";
+
+  home.stateVersion = "25.11"; # Read up on this before changing!
+
+  home.sessionVariables = {
+    EDITOR = "nvim";
+  };
+
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
+
+}
