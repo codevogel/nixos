@@ -8,6 +8,7 @@ return {
       lua_ls = {},
       bashls = {},
       nixd = {},
+      cssls = {},
     }
 
     for server_name, cfg in pairs(servers) do

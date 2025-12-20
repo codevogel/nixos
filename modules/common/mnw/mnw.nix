@@ -20,6 +20,7 @@
       nixd
       bash-language-server
       shellcheck
+      vscode-css-languageserver
 
       # Formatters:
       stylua
