@@ -1,6 +1,10 @@
 { ... }:
 
 {
+  imports = [
+    ./waybar.nix
+  ];
+
   # Hint electron apps to use WL
   home.sessionVariables.NIXOS_OZONE_WL = "1";
 
@@ -10,6 +14,7 @@
       "$mainMod" = "SUPER";
       "$terminal" = "kitty";
       "$browser" = "firefox";
+      "exec-once" = "waybar";
       bind = [
         # Close windows
         "$mainMod SHIFT, C, killactive"

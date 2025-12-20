@@ -12,7 +12,7 @@
     ./shell/oh-my-posh/oh-my-posh.nix
     ./browser/firefox/firefox.nix
     ./editor/nvim/nvim.nix
-    ./wm/hyprland.nix
+    ./wm/hypr/hyprland.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
