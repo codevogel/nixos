@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  # The 'shell' opt requires programs.<shell>.enable = true in ./programs.nix
+  programs.zsh.enable = true;
   users.users = {
     root = {
       shell = pkgs.zsh;
@@ -13,7 +13,6 @@
         "networkmanager"
         "wheel"
       ];
-      packages = with pkgs; [ ];
       shell = pkgs.zsh;
     };
   };
