@@ -7,7 +7,7 @@ in
   programs.firefox = {
     enable = true;
 
-    profiles.default = {
+    profiles."codevogel" = {
       settings = {
         extensions = {
           autoDisableScopes = 0;
