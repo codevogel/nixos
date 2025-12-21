@@ -14,6 +14,7 @@
     ./editor/nvim/nvim.nix
     ./wm/hypr/hyprland.nix
     ./audio/wiremix/wiremix.nix
+    ./audio/pamixer/pamixer.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
