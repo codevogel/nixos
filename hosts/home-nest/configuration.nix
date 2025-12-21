@@ -30,7 +30,12 @@
   home-manager = {
     extraSpecialArgs = { inherit self inputs; };
     users = {
-      "codevogel" = import ./home.nix;
+      "codevogel" = {
+        imports = [
+          ./home.nix
+          inputs.walker.homeManagerModules.default
+        ];
+      };
     };
   };
 

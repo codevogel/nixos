@@ -14,7 +14,6 @@
       "$mainMod" = "SUPER";
       "$terminal" = "kitty";
       "$browser" = "firefox";
-      "exec-once" = "waybar";
       bind = [
         # Close windows
         "$mainMod SHIFT, C, killactive"
@@ -24,6 +23,7 @@
 
         # Launch programs
         "$mainMod, Return, exec, $terminal"
+        "$mainMod, R, exec, walker"
         "$mainMod, B, exec, $browser"
         "$mainMod, M, exec, spotify"
 
@@ -52,6 +52,10 @@
         )
       );
     };
+    extraConfig = ''
+      exec-once = waybar
+      exec-once = walker --gapplication-service
+    '';
     submaps = {
       move_focus = {
         settings = {
