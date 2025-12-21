@@ -11,6 +11,7 @@
       fzf
       home-manager
       spotify
+      htop
     ];
 
     variables = {
