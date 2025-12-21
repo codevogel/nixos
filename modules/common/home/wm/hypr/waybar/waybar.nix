@@ -6,7 +6,7 @@
     settings = {
       mainBar = {
         layer = "top";
-        position = "left";
+        position = "top";
         modules-left = [
           "hyprland/workspaces"
         ];
@@ -18,6 +18,12 @@
         ];
 
         "hyprland/workspaces" = {
+          format = "{icon}";
+          "format-icons" = {
+            default = "";
+            active = "";
+            urgent = "";
+          };
           persistent-workspaces = {
             "1" = [ ];
             "2" = [ ];
