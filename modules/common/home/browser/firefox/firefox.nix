@@ -16,9 +16,24 @@ in
             enabled = false;
           };
         };
+
+        "browser.newtabpage.activity-stream.showSearch" = false;
+        "browser.newtabpage.activity-stream.showSponsored" = false;
+        "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
+        "browser.newtabpage.activity-stream.showSponsoredCheckboxes" = false;
+
+        "browser.newtabpage.discoverystream.personalization.enabled" = false;
+        "browser.urlbar.quicksuggest.dataCollection.enabled" = false;
+
+        "datareporting.policy.dataSubmissionEnabled" = false;
+        "datareporting.usage.uploadEnabled" = false;
+        "datareporting.healthreport.uploadEnabled" = false;
+
+        "privacy.globalprivacycontrol.enabled" = true;
       };
 
       extensions = {
+        force = true;
         packages = [
           firefoxAddons.bitwarden
           firefoxAddons.ublock-origin
