@@ -1,6 +1,6 @@
 window#waybar {
 	background-color: @base00;
-	border-right: 2px solid @base01;
+	border-bottom: 2px solid @base01;
 }
 
 #workspaces {
@@ -22,4 +22,16 @@ window#waybar {
 
 #workspaces button.urgent {
 	background-color: @base09;
+}
+
+#pulseaudio {
+	font-size: 24pt;
+}
+
+.modules-left {
+	margin-left: 20px;
+}
+
+.modules-right {
+	margin-right: 20px;
 }

@@ -14,7 +14,7 @@
           "clock"
         ];
         modules-right = [
-          "wireplumber"
+          "pulseaudio"
         ];
 
         "hyprland/workspaces" = {
@@ -31,6 +31,20 @@
             "4" = [ ];
             "5" = [ ];
           };
+        };
+
+        "pulseaudio" = {
+          format = "{icon}";
+          format-icons = {
+            default = [
+              ""
+              ""
+              ""
+            ];
+          };
+          format-muted = "";
+          on-click = "kitty --title wiremix -e wiremix";
+          on-click-right = "pamixer -t";
         };
 
         reload_style_on_change = true;
