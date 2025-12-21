@@ -9,6 +9,7 @@
         position = "top";
         modules-left = [
           "hyprland/workspaces"
+          "mpris"
         ];
         modules-center = [
           "clock"
@@ -19,7 +20,7 @@
 
         "hyprland/workspaces" = {
           format = "{icon}";
-          "format-icons" = {
+          format-icons = {
             default = "";
             active = "";
             urgent = "";
@@ -35,6 +36,24 @@
 
         "clock" = {
           format = "{:%H:%M on %a %d-%m-%Y}";
+        };
+
+        "mpris" = {
+          format = "{player_icon} {dynamic}";
+          format-paused = "{status_icon} <i>{dynamic}</i>";
+          dynamic-order = [
+            "title"
+            "artist"
+            "position"
+            "length"
+          ];
+          player-icons = {
+            default = "▶";
+          };
+          status-icons = {
+            paused = "⏸";
+          };
+
         };
 
         "pulseaudio" = {

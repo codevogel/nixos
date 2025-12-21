@@ -17,6 +17,7 @@
     ./audio/pamixer/pamixer.nix
     ./launcher/walker/walker.nix
     ./music/spotify/spotify.nix
+    ./music/playerctl/playerctl.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
