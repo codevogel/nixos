@@ -51,7 +51,6 @@
         specialArgs = { inherit inputs self; };
         modules = [
           ./hosts/home-nest/configuration.nix
-          inputs.home-manager.nixosModules.default
           stylix.nixosModules.stylix
         ];
       };
