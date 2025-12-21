@@ -8,7 +8,25 @@ return {
       lua_ls = {},
       bashls = {},
       nixd = {},
-      cssls = {},
+      cssls = {
+        settings = {
+          css = {
+            lint = {
+              unknownAtRules = "ignore",
+            },
+          },
+          scss = {
+            lint = {
+              unknownAtRules = "ignore",
+            },
+          },
+          less = {
+            lint = {
+              unknownAtRules = "ignore",
+            },
+          },
+        },
+      },
     }
 
     for server_name, cfg in pairs(servers) do
