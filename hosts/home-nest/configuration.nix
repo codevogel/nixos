@@ -20,6 +20,7 @@
     ../../modules/common/system/audio.nix # Audio
     ../../modules/common/system/nvidia.nix # Nvidia
     ../../modules/common/system/hyprland.nix # Hyprland
+    ../../modules/common/system/theme/theme.nix # Stylix theming
 
   ];
 

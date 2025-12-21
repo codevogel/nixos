@@ -15,12 +15,18 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
     {
       self,
       nixpkgs,
+      stylix,
       mnw,
       ...
     }@inputs:
@@ -39,6 +45,7 @@
         modules = [
           ./hosts/home-nest/configuration.nix
           inputs.home-manager.nixosModules.default
+          stylix.nixosModules.stylix
         ];
       };
     };
