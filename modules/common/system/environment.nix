@@ -10,7 +10,6 @@
       neovim
       fzf
       home-manager
-      spotify
       htop
     ];
 
