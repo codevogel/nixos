@@ -26,6 +26,8 @@
             "5" = [ ];
           };
         };
+
+        reload_style_on_change = true;
       };
     };
     style = builtins.readFile ./waybar.css;
