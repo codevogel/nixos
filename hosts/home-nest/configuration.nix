@@ -15,7 +15,6 @@
     ../../modules/common/system/users.nix # Users
     ../../modules/common/system/keymap.nix # Keymap (for x11)
     ../../modules/common/system/programs.nix # Nix program modules
-    ../../modules/common/system/fonts.nix # Fonts
     ../../modules/common/system/locale.nix # Locale (time, internationalization)
     ../../modules/common/system/audio.nix # Audio
     ../../modules/common/system/nvidia.nix # Nvidia
