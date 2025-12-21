@@ -33,6 +33,10 @@
           };
         };
 
+        "clock" = {
+          format = "{:%H:%M on %a %d-%m-%Y}";
+        };
+
         "pulseaudio" = {
           format = "{icon}";
           format-icons = {
