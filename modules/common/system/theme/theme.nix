@@ -30,7 +30,11 @@
 
   home-manager.sharedModules = [
     {
-      stylix.targets.waybar.addCss = false;
+      stylix.targets = {
+        waybar.addCss = false;
+        firefox.colorTheme.enable = true;
+        firefox.profileNames = [ "codevogel" ];
+      };
     }
   ];
 }
