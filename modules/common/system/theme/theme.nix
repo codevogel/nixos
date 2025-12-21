@@ -4,11 +4,6 @@
   stylix = {
     enable = true;
     base16Scheme = ./kanagawa.yaml;
-    targets = {
-      waybar = {
-        addCss = false;
-      };
-    };
 
     fonts = {
       serif = {
@@ -31,6 +26,11 @@
         name = "Noto Color Emoji";
       };
     };
-
   };
+
+  home-manager.sharedModules = [
+    {
+      stylix.targets.waybar.addCss = false;
+    }
+  ];
 }
