@@ -14,7 +14,6 @@
     ../../modules/common/system/environment.nix # Environment (system packages, variables)
     ../../modules/common/system/users.nix # Users
     ../../modules/common/system/keymap.nix # Keymap (for x11)
-    ../../modules/common/system/programs.nix # Nix program modules
     ../../modules/common/system/locale.nix # Locale (time, internationalization)
     ../../modules/common/system/audio.nix # Audio
     ../../modules/common/system/nvidia.nix # Nvidia

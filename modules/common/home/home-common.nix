@@ -13,6 +13,7 @@
     ./browser/firefox/firefox.nix
     ./editor/nvim/nvim.nix
     ./wm/hypr/hyprland.nix
+    ./audio/wiremix/wiremix.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
