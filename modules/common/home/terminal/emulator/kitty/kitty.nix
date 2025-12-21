@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 let
   themeKanagawa = import ./themes/kanagawa.nix;
@@ -11,7 +11,7 @@ in
   programs.kitty = {
     enable = true;
     font = {
-      name = "JetBrains Mono Nerd Font Mono";
+      name = lib.mkForce "JetBrains Mono Nerd Font Mono";
       size = 12;
     };
 
