@@ -1,5 +1,5 @@
 window#waybar {
-	background-color: alpha(@base05, 0.08);
+	background-color: alpha(@base00, .85);
 	min-height: 0px;
 }
 
