@@ -18,6 +18,8 @@
     ./launcher/walker/walker.nix
     ./music/spotify/spotify.nix
     ./music/playerctl/playerctl.nix
+    ./file-explorer/yazi/yazi.nix
+    ./file-explorer/nautilus/nautilus.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
