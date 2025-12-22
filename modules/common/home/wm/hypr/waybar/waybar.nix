@@ -41,6 +41,7 @@
         "mpris" = {
           format = "{player_icon} {dynamic}";
           format-paused = "{status_icon} <i>{dynamic}</i>";
+          interval = 1;
           dynamic-order = [
             "title"
             "artist"

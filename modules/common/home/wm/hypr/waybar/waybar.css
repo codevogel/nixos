@@ -1,19 +1,23 @@
 window#waybar {
-	background-color: @base00;
-	border-bottom: 2px solid @base01;
+	background-color: alpha(@base05, 0.08);
+	min-height: 0px;
 }
 
 #workspaces {
-	background-color: transparent;
+	font-size: 16pt;
+	border-radius: 25px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 #workspaces button {
-	background-color: transparent;
-	color: @base07;
-	border-radius: 0%;
-	margin-left: 5px;
-	margin-right: 5px;
-	padding: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	color: alpha(@base04, .2);
 }
 
 #workspaces button.active {
@@ -21,7 +25,11 @@ window#waybar {
 }
 
 #workspaces button.urgent {
-	background-color: @base09;
+	color: @base09;
+}
+
+#mpris {
+	margin-left: 25rem;
 }
 
 #pulseaudio {
