@@ -4,7 +4,7 @@
   stylix = {
     enable = true;
     base16Scheme = ./kanagawa.yaml;
-    image = ./kanagawa.jpg;
+    image = ./tunnel.jpg;
 
     fonts = {
       serif = {
