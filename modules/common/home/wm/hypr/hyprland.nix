@@ -53,7 +53,7 @@
       );
     };
     extraConfig = ''
-      exec-once = waybar
+      exec-once = sleep .2 && waybar
       exec-once = walker --gapplication-service
     '';
     submaps = {
