@@ -7,6 +7,8 @@
     image = ./tunnel.jpg;
 
     fonts = {
+      sizes.applications = 10;
+
       serif = {
         package = pkgs.roboto-serif;
         name = "Roboto Serif";
