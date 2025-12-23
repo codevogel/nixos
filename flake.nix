@@ -54,5 +54,14 @@
           stylix.nixosModules.stylix
         ];
       };
+
+      nixosConfigurations.work-nest = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs self; };
+        modules = [
+          ./hosts/work-nest/configuration.nix
+          stylix.nixosModules.stylix
+        ];
+      };
+
     };
 }
