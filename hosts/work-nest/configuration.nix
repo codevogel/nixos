@@ -10,6 +10,7 @@
     ./hardware-configuration.nix
     ../../modules/shared/system/system.nix
     ../../modules/work-nest/system/nvidia.nix # Nvidia
+    ../../modules/work-nest/system/networking.nix
   ];
 
   nix.settings.experimental-features = [
