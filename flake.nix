@@ -27,6 +27,8 @@
       url = "github:abenz1267/walker";
       inputs.elephant.follows = "elephant";
     };
+
+    gazelle.url = "github:Zeus-Deus/gazelle-tui";
   };
 
   outputs =

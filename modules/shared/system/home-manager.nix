@@ -10,6 +10,7 @@
         imports = [
           ../home/home.nix
           inputs.walker.homeManagerModules.default
+          inputs.gazelle.homeModules.gazelle
         ];
       };
     };
