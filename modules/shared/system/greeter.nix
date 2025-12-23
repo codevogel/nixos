@@ -8,7 +8,7 @@
       default_session = {
         user = "greeter";
         command = ''
-          ${pkgs.greetd.tuigreet}/bin/tuigreet \
+          ${pkgs.tuigreet}/bin/tuigreet \
             --time \
             --remember \
             --remember-user-session \
@@ -20,6 +20,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    greetd.tuigreet
+    tuigreet
   ];
 }
