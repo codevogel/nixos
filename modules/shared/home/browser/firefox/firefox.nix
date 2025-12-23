@@ -1,7 +1,8 @@
 { inputs, pkgs, ... }:
 
 let
-  firefoxAddons = inputs.nur.legacyPackages.${pkgs.system}.repos.rycee.firefox-addons;
+  firefoxAddons =
+    inputs.nur.legacyPackages.${pkgs.stdenv.hostPlatform.system}.repos.rycee.firefox-addons;
 in
 {
   programs.firefox = {
