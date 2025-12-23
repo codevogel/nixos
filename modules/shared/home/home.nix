@@ -21,6 +21,7 @@
     ./file-explorer/yazi/yazi.nix
     ./file-explorer/nautilus/nautilus.nix
     ./networking/gazelle/gazelle.nix
+    ./media-player/vlc/vlc.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
