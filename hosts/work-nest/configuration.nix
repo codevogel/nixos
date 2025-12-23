@@ -2,45 +2,20 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ self, inputs, ... }:
+{ ... }:
 
 {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    inputs.home-manager.nixosModules.default
-    ../../modules/common/system/boot.nix # Boot options (loader, kernel)
-    ../../modules/common/system/networking.nix # Networking
-    ../../modules/common/system/environment.nix # Environment (system packages, variables)
-    ../../modules/common/system/users.nix # Users
-    ../../modules/common/system/keymap.nix # Keymap (for x11)
-    ../../modules/common/system/locale.nix # Locale (time, internationalization)
-    ../../modules/common/system/audio.nix # Audio
-    ../../modules/common/system/nvidia.nix # Nvidia
-    ../../modules/common/system/hyprland.nix # Hyprland
-    ../../modules/common/system/theme/theme.nix # Stylix theming
-    ../../modules/common/system/greeter.nix # Greeter
-
+    ../../modules/shared/system/system.nix
+    ../../modules/work-nest/system/nvidia.nix # Nvidia
   ];
 
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
-
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    extraSpecialArgs = { inherit self inputs; };
-    users = {
-      "codevogel" = {
-        imports = [
-          ./home.nix
-          inputs.walker.homeManagerModules.default
-        ];
-      };
-    };
-  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

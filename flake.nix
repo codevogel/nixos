@@ -41,7 +41,7 @@
       packages.x86_64-linux =
         let
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          mnwPackages = import ./modules/common/mnw/mnw.nix {
+          mnwPackages = import ./modules/shared/mnw/mnw.nix {
             inherit pkgs mnw self;
           };
         in
