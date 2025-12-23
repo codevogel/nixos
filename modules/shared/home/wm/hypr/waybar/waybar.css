@@ -32,14 +32,15 @@ window#waybar {
 	margin-left: 25rem;
 }
 
-#pulseaudio {
-	font-size: 24pt;
-}
-
 .modules-left {
 	margin-left: 20px;
 }
 
 .modules-right {
 	margin-right: 20px;
+}
+
+.modules-right label {
+	font-size: 22pt;
+	margin-left: 10px;
 }
