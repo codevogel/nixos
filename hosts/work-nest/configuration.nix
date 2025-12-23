@@ -12,6 +12,7 @@
     ../../modules/work-nest/system/nvidia.nix # Nvidia
     ../../modules/work-nest/system/networking.nix
     ../../modules/work-nest/system/home-manager.nix
+    ../../modules/work-nest/system/bluetooth.nix
   ];
 
   nix.settings.experimental-features = [
