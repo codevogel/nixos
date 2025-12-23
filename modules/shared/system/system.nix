@@ -14,5 +14,6 @@
     ./theme/theme.nix # Stylix theming
     ./greeter.nix # Greeter
     ./home-manager.nix # Home Manager
+    ./nvidia.nix # Nvidia
   ];
 }
