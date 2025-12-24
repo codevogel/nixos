@@ -22,6 +22,7 @@
     ./file-explorer/nautilus/nautilus.nix
     ./networking/gazelle/gazelle.nix
     ./media-player/vlc/vlc.nix
+    ./downloader/qbittorrent/qbittorrent.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
