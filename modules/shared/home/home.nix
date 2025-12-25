@@ -23,6 +23,7 @@
     ./networking/gazelle/gazelle.nix
     ./media-player/vlc/vlc.nix
     ./downloader/qbittorrent/qbittorrent.nix
+    ./dev/bashly/bashly.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
