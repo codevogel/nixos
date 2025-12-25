@@ -7,7 +7,7 @@
     image = ./tunnel.jpg;
 
     fonts = {
-      sizes.applications = 10;
+      sizes.applications = 12;
 
       serif = {
         package = pkgs.roboto-serif;
