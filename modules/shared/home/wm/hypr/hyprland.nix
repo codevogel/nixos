@@ -35,6 +35,9 @@
         # Enter submaps
         "$mainMod, W, submap, move_focus"
         "$mainMod SHIFT, W, submap, resize_windows"
+
+        "$mainMod, G, exec, ~/work/peck/peck --record --format gif"
+        "$mainMod SHIFT, G, exec, ~/work/peck/peck --stop"
       ]
       ++ (
         # workspaces
