@@ -3,6 +3,7 @@
 {
   imports = [
     ./waybar/waybar.nix
+    ./mako/mako.nix
   ];
 
   # Hint electron apps to use WL
