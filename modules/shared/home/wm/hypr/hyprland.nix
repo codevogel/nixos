@@ -4,6 +4,7 @@
   imports = [
     ./waybar/waybar.nix
     ./mako/mako.nix
+    ./peck/peck.nix
   ];
 
   # Hint electron apps to use WL
@@ -36,8 +37,9 @@
         "$mainMod, W, submap, move_focus"
         "$mainMod SHIFT, W, submap, resize_windows"
 
-        "$mainMod, G, exec, ~/work/peck/peck --record --format gif"
-        "$mainMod SHIFT, G, exec, ~/work/peck/peck --stop"
+        "$mainMod SHIFT, S, exec, peck --clipboard --temp"
+        "$mainMod SHIFT, R, exec, peck --record --clipboard --temp"
+        "$mainMod SHIFT, G, exec, peck --record --clipboard --temp --format=gif"
       ]
       ++ (
         # workspaces
