@@ -37,7 +37,7 @@
         "$mainMod, W, submap, move_focus"
         "$mainMod SHIFT, W, submap, resize_windows"
 
-        "$mainMod SHIFT, S, exec, peck --clipboard --temp"
+        "$mainMod SHIFT, S, exec, peck --clipboard --temp --freeze"
         "$mainMod SHIFT, R, exec, peck --record --clipboard --temp"
         "$mainMod SHIFT, G, exec, peck --record --clipboard --temp --format=gif"
       ]

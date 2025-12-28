@@ -3,11 +3,11 @@
 let
   peck = pkgs.stdenv.mkDerivation {
     pname = "peck";
-    version = "0.1.0";
+    version = "0.1.1";
 
     src = pkgs.fetchurl {
-      url = "https://github.com/codevogel/peck/releases/download/v0.1.0/peck";
-      sha256 = "47bfd14c390c6f09e521c864efbd2d7ed608164240d07c6ecf48c2b7677dbabc";
+      url = "https://github.com/codevogel/peck/releases/download/v0.1.1/peck";
+      sha256 = "b2eabeae7b8faecbff9d51acf8d3b66a157584013e6b47ab780f7bb9d90c3b66";
     };
 
     unpackPhase = ''true'';
@@ -29,5 +29,6 @@ in
     wf-recorder
     ffmpeg
     wl-clipboard
+    wayfreeze
   ];
 }
