@@ -4,6 +4,7 @@ return {
     formatters_by_ft = {
       lua = { "stylua" },
       nix = { "nixfmt" },
+      sh = { "beautysh" },
     },
     format_on_save = {
       timeout_ms = 500,

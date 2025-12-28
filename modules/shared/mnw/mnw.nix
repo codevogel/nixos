@@ -20,6 +20,7 @@
       nixd
       bash-language-server
       shellcheck
+      beautysh
       vscode-css-languageserver
 
       # Formatters:
