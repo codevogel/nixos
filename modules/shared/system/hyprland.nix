@@ -5,6 +5,7 @@
   environment.variables = {
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     __LIBVA_DRIVER_NAME = "nvidia";
+    QT_QPA_PLATFORM = "wayland";
   };
 
   environment.systemPackages = with pkgs; [
