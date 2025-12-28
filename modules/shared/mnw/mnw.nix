@@ -22,10 +22,12 @@
       shellcheck
       beautysh
       vscode-css-languageserver
+      markdownlint-cli2
 
       # Formatters:
       stylua
       nixfmt
+      prettierd
     ];
 
     # Along with listing the package here, each plugin should also be
