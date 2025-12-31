@@ -12,6 +12,14 @@
     wl-clipboard
   ];
 
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+    ];
+  };
+
   # Note: Hyprland (may) require nvidia drivers
   #       Those are listed in ./nvidia.nix
 
