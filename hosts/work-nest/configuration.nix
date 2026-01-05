@@ -13,6 +13,7 @@
     ../../modules/work-nest/system/networking.nix
     ../../modules/work-nest/system/home-manager.nix
     ../../modules/work-nest/system/bluetooth.nix
+    ../../modules/work-nest/system/theme.nix
   ];
 
   nix.settings.experimental-features = [
