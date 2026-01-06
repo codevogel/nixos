@@ -16,7 +16,6 @@
         ];
         modules-right = [
           "group/tray-expander"
-          "tray"
           "network"
           "pulseaudio"
         ];
