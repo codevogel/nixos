@@ -10,6 +10,10 @@
   # Hint electron apps to use WL
   home.sessionVariables.NIXOS_OZONE_WL = "1";
 
+  home.packages = with pkgs; [
+    killall
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
