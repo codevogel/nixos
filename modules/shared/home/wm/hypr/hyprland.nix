@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -20,6 +20,20 @@
       "$mainMod" = "SUPER";
       "$terminal" = "kitty";
       "$browser" = "firefox";
+
+      general = {
+        gaps_in = 0;
+        gaps_out = 0;
+        no_focus_fallback = true;
+        resize_on_border = true;
+        border_size = 1;
+      };
+
+      exec-once = [
+        "walker --gapplication-service"
+        "killall waybar; sleep 0.5 && waybar"
+      ];
+
       bind = [
         # Close windows
         "$mainMod SHIFT, C, killactive"
@@ -62,10 +76,6 @@
         )
       );
     };
-    extraConfig = ''
-      exec-once = sleep .2 && waybar
-      exec-once = walker --gapplication-service
-    '';
     submaps = {
       move_focus = {
         settings = {
