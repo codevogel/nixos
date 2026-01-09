@@ -24,6 +24,7 @@
       vscode-css-languageserver
       markdownlint-cli2
       gdtoolkit_4
+      roslyn-ls
 
       # Formatters:
       stylua
