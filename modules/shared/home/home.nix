@@ -25,6 +25,7 @@
     ./downloader/qbittorrent/qbittorrent.nix
     ./dev/bashly/bashly.nix
     ./dev/pls/pls.nix
+    ./dev/godot/godot.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
