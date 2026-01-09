@@ -12,6 +12,7 @@
       home-manager
       htop
       openssl
+      ethtool
     ];
 
     variables = {
