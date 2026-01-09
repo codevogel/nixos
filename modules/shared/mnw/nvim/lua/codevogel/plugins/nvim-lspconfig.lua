@@ -8,6 +8,8 @@ return {
       lua_ls = {},
       bashls = {},
       nixd = {},
+      gdscript = {},
+      gdshader_lsp = {},
       cssls = {
         settings = {
           css = {
