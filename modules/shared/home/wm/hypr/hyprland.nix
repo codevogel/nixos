@@ -39,7 +39,7 @@
         "$mainMod SHIFT, C, killactive"
 
         # Quit Hyprland
-        "$mainMod SHIFT, Q, exec, command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"
+        "$mainMod SHIFT, Q, exec, killall waybar; command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"
 
         # Launch programs
         "$mainMod, Return, exec, $terminal"
