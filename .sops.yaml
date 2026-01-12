@@ -1,0 +1,10 @@
+keys:
+  - &admin_codevogel age1an2jjalqxq26pnxdwfaqmteyn9ut6x06cs4yraq3pmcm9ssura5qqts6d4
+  - &server_work-nest age1mjlydf9xxjpry7x4vu8c4d3cttw788j7zmrepzz6gaknkhs63q8srlnv6p
+
+creation_rules:
+  - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
+    key_groups:
+      - age:
+        - *admin_codevogel
+        - *server_work-nest

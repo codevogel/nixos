@@ -16,5 +16,6 @@
     ./home-manager.nix # Home Manager
     ./nvidia.nix # Nvidia
     ./steam.nix
+    ./sops.nix
   ];
 }

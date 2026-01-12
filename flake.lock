@@ -370,8 +370,29 @@
         "mnw": "mnw",
         "nixpkgs": "nixpkgs_3",
         "nur": "nur",
+        "sops-nix": "sops-nix",
         "stylix": "stylix",
         "walker": "walker"
+      }
+    },
+    "sops-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1768104471,
+        "narHash": "sha256-HdnXWQsA1EI27IJlaENUEEug58trUrh6+MT0cFiDHmY=",
+        "owner": "Mic92",
+        "repo": "sops-nix",
+        "rev": "94f9cbd20f680ebb2ad6cdf39da97cbcfaedf004",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "sops-nix",
+        "type": "github"
       }
     },
     "stylix": {

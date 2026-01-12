@@ -29,6 +29,11 @@
     };
 
     gazelle.url = "github:Zeus-Deus/gazelle-tui";
+
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -37,6 +42,7 @@
       nixpkgs,
       stylix,
       mnw,
+      sops-nix,
       ...
     }@inputs:
     {
@@ -54,6 +60,7 @@
         modules = [
           ./hosts/home-nest/configuration.nix
           stylix.nixosModules.stylix
+          sops-nix.nixosModules.sops
         ];
       };
 
@@ -62,6 +69,7 @@
         modules = [
           ./hosts/work-nest/configuration.nix
           stylix.nixosModules.stylix
+          sops-nix.nixosModules.sops
         ];
       };
 
