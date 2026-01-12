@@ -13,7 +13,7 @@
             --remember \
             --remember-user-session \
             --asterisks \
-            --cmd Hyprland
+            --cmd start-hyprland
         '';
       };
     };
