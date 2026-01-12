@@ -36,4 +36,14 @@
       set-option -g status-position top
     '';
   };
+
+  home.file.".config/tmux/startup/dev-default.sh" = {
+    source = ./startup/dev-default.sh;
+    executable = true;
+  };
+
+  home.file.".config/tmux/startup/dev-svelte.sh" = {
+    source = ./startup/dev-svelte.sh;
+    executable = true;
+  };
 }
