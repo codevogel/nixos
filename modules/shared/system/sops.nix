@@ -11,8 +11,5 @@
   sops.age.keyFile = "/var/lib/sops-nix/key.txt";
   # This will generate a new key if the key specified above does not exist
   sops.age.generateKey = true;
-  # This is the actual specification of the secrets.
-  sops.secrets.eduroam-cert-password = { };
-  sops.secrets.eduroam-identity = { };
 
 }
