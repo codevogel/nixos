@@ -27,4 +27,6 @@ in
     yq-go
     fzf
   ];
+
+  home.file.".pls.yml".source = ./.pls.yml;
 }
