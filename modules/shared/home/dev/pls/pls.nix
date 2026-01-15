@@ -28,5 +28,8 @@ in
     fzf
   ];
 
-  home.file.".pls.yml".source = ./.pls.yml;
+  home.file.".pls.yml" = {
+    source = ./.pls.yml;
+    force = true;
+  };
 }
