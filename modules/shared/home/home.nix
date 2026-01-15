@@ -28,6 +28,7 @@
     ./dev/godot/godot.nix
     ./dev/unity/unity.nix
     ./dev/nodejs/nodejs.nix
+    ./dev/blender/blender.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
