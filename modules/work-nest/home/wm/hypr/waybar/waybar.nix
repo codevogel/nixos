@@ -5,10 +5,32 @@
     settings = {
       mainBar = {
 
-        modules-right = [
-          "bluetooth"
-          "battery"
-        ];
+        "group/tray-expander" = {
+          orientation = "inherit";
+
+          drawer = {
+            transition-duration = 600;
+            children-class = "tray-group-item";
+          };
+
+          modules = [
+            "custom/expand-icon"
+            "tray"
+            "bluetooth"
+            "battery"
+            "backlight"
+          ];
+        };
+
+        "backlight" = {
+          device = "intel_backlight";
+          format = "{icon}";
+          format-icons = [
+            "󰃞"
+            "󰃟"
+            "󰃠"
+          ];
+        };
 
         "bluetooth" = {
           format = "";
