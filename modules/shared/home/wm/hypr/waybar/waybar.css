@@ -29,7 +29,7 @@ window#waybar {
 }
 
 #mpris {
-	margin-left: 25rem;
+	margin-left: 10rem;
 }
 
 .modules-left {
@@ -43,4 +43,25 @@ window#waybar {
 .modules-right label {
 	font-size: 22pt;
 	margin-left: 10px;
+}
+
+#workspaces.windows {
+	padding-left: 10px;
+	min-width: 10rem;
+}
+
+#workspaces.windows button {
+	background-color: alpha(@base04, 0);
+}
+
+/* Show only the active window */
+#workspaces.windows .taskbar-window {
+	padding-left: 5px;
+	padding-right: 5px;
+	border-radius: 5px;
+	background-color: alpha(@base04, 0);
+}
+
+#workspaces.windows .taskbar-window.active {
+	background-color: alpha(@base04, 0.2);
 }

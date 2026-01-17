@@ -10,6 +10,7 @@
         position = "top";
         modules-left = [
           "hyprland/workspaces"
+          "hyprland/workspaces#windows"
           "mpris"
         ];
         modules-center = [
@@ -20,9 +21,8 @@
           "network"
           "pulseaudio"
         ];
-
         "hyprland/workspaces" = {
-          format = "{icon}: {windows}";
+          format = "{icon}";
           format-window-separator = "";
           format-icons = {
             default = "";
@@ -36,12 +36,19 @@
             "4" = [ ];
             "5" = [ ];
           };
+        };
+
+        "hyprland/workspaces#windows" = {
+          active-only = true;
+          format = "{windows}";
           workspace-taskbar = {
             enable = true;
             update-active-window = true;
-            format = "{icon} {title:.20}";
+            format = "{icon}";
             icon-size = 16;
+            sort-order = "workspace";
             orientation = "horizontal";
+            on-click-window = "${./scripts/focus-window.sh} {address} {button}";
           };
         };
 
