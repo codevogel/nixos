@@ -22,7 +22,8 @@
         ];
 
         "hyprland/workspaces" = {
-          format = "{icon}";
+          format = "{icon}: {windows}";
+          format-window-separator = "";
           format-icons = {
             default = "";
             active = "";
@@ -34,6 +35,13 @@
             "3" = [ ];
             "4" = [ ];
             "5" = [ ];
+          };
+          workspace-taskbar = {
+            enable = true;
+            update-active-window = true;
+            format = "{icon} {title:.20}";
+            icon-size = 16;
+            orientation = "horizontal";
           };
         };
 
