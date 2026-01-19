@@ -46,7 +46,6 @@
             update-active-window = true;
             format = "{icon}";
             icon-size = 16;
-            sort-order = "workspace";
             orientation = "horizontal";
             on-click-window = "${./scripts/focus-window.sh} {address} {button}";
           };
