@@ -3,7 +3,7 @@
 {
   stylix = {
     fonts = {
-      sizes.applications = lib.mkForce 8;
+      sizes.applications = lib.mkForce 12;
     };
   };
 }
