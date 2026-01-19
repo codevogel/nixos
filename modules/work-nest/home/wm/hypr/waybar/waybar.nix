@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 
 {
   programs.waybar = {
@@ -13,9 +13,7 @@
             children-class = "tray-group-item";
           };
 
-          modules = [
-            "custom/expand-icon"
-            "tray"
+          modules = lib.mkAfter [
             "bluetooth"
             "battery"
             "backlight"
