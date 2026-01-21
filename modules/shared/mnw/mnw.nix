@@ -106,7 +106,7 @@
 
       dev.codevogel = {
         pure = ./nvim;
-        impure = "/home/codevogel/nixos/modules/mnw/nvim";
+        impure = "/home/codevogel/nixos/modules/shared/mnw/nvim";
       };
     };
   };
