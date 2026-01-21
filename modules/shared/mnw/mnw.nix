@@ -79,6 +79,18 @@
           };
 
         }
+
+        {
+          pname = "hatch.nvim";
+
+          src = pkgs.fetchFromGitHub {
+            owner = "codevogel";
+            repo = "hatch.nvim";
+            rev = "4147e9d1021be477b91805b072baab51fd884ddf";
+            hash = "sha256-FqoMPY8OUeXnAjZO9MJbdCsgvdB5OrDV1ajtdTrrmq8=";
+          };
+
+        }
       ];
 
       # We can use optAttrs to rename plugins to their expected name

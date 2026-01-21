@@ -7,9 +7,18 @@ return {
       sh = { "beautysh" },
       markdown = { "prettierd", "markdownlint-cli2" },
     },
-    format_on_save = {
-      timeout_ms = 500,
-      lsp_format = "fallback",
-    },
   },
+  config = function()
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      pattern = "*",
+      callback = function(args)
+        require("conform").format({
+          bufnr = args.buf,
+          timeout_ms = 500,
+          lsp_format = "fallback",
+        })
+        require("hatch").hatch()
+      end,
+    })
+  end,
 }
