@@ -114,6 +114,7 @@
         "fidget.nvim" = pkgs.vimPlugins.fidget-nvim;
         "roslyn.nvim" = pkgs.vimPlugins.roslyn-nvim;
         "nvim-colorizer.lua" = pkgs.vimPlugins.colorizer;
+        "LuaSnip" = pkgs.vimPlugins.luasnip;
       };
 
       dev.codevogel = {
