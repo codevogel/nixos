@@ -86,8 +86,8 @@
           src = pkgs.fetchFromGitHub {
             owner = "codevogel";
             repo = "hatch.nvim";
-            rev = "4147e9d1021be477b91805b072baab51fd884ddf";
-            hash = "sha256-FqoMPY8OUeXnAjZO9MJbdCsgvdB5OrDV1ajtdTrrmq8=";
+            rev = "a31a5b7da16312bc41abdb87231bd5b225925700";
+            hash = "sha256-+Xnar472jLYuolOHCoQRGTWV0lhd1seqK6dmoQC0AtE=";
           };
 
         }
