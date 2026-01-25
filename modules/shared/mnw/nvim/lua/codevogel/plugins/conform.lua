@@ -7,6 +7,7 @@ return {
         nix = { "nixfmt" },
         sh = { "beautysh" },
         markdown = { "prettierd", "markdownlint-cli2" },
+        gdscript = { "gdformat" },
       },
     })
     vim.api.nvim_create_autocmd("BufWritePre", {
