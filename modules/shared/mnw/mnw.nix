@@ -96,7 +96,7 @@
       # We can use optAttrs to rename plugins to their expected name
       # as defined by the lua files
       optAttrs = {
-        harpoon = pkgs.vimPlugins.harpoon2;
+        "harpoon" = pkgs.vimPlugins.harpoon2;
         "blink.cmp" = pkgs.vimPlugins.blink-cmp;
         "conform.nvim" = pkgs.vimPlugins.conform-nvim;
         "kanagawa.nvim" = pkgs.vimPlugins.kanagawa-nvim;
@@ -115,6 +115,7 @@
         "roslyn.nvim" = pkgs.vimPlugins.roslyn-nvim;
         "nvim-colorizer.lua" = pkgs.vimPlugins.colorizer;
         "LuaSnip" = pkgs.vimPlugins.luasnip;
+        "gdscript-extended-lsp.nvim" = pkgs.vimPlugins.gdscript-extended-lsp-nvim;
       };
 
       dev.codevogel = {
