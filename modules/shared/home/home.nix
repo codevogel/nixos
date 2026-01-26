@@ -30,6 +30,7 @@
     ./dev/nodejs/nodejs.nix
     ./dev/blender/blender.nix
     ./dev/vhs/vhs.nix
+    ./dev/vscode/vscode.nix
     ./docs/obsidian.nix
   ];
 
