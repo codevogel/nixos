@@ -30,6 +30,7 @@
     ./dev/nodejs/nodejs.nix
     ./dev/blender/blender.nix
     ./dev/vhs/vhs.nix
+    ./docs/obsidian.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
