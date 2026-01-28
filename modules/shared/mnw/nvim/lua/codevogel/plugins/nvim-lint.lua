@@ -8,6 +8,8 @@ return {
         markdown = { "markdownlint-cli2" },
         nix = { "nix" },
         gdscript = { "gdlint" },
+        ts = { "eslint" },
+        svelte = { "eslint" },
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
