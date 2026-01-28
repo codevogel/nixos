@@ -8,6 +8,9 @@ return {
         sh = { "beautysh" },
         markdown = { "prettierd", "markdownlint-cli2" },
         gdscript = { "gdformat" },
+        svelte = { "prettierd" },
+        ts = { "prettierd" },
+        js = { "prettierd" },
       },
     })
     vim.api.nvim_create_autocmd("BufWritePre", {
