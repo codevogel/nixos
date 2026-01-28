@@ -10,6 +10,9 @@ return {
       nixd = {},
       gdscript = {},
       gdshader_lsp = {},
+      svelte = {},
+      tsserver = {},
+      eslint = {},
       cssls = {
         settings = {
           css = {
