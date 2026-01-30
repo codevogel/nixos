@@ -6,6 +6,7 @@
       wget
       curl
       git
+      git-lfs
       vim
       neovim
       fzf
