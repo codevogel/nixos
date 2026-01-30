@@ -25,6 +25,8 @@
       markdownlint-cli2
       gdtoolkit_4
       roslyn-ls
+      svelte-language-server
+      vscode-langservers-extracted
 
       # Formatters:
       stylua
