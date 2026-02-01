@@ -30,6 +30,7 @@
       };
 
       exec-once = [
+        "waybar"
         "walker --gapplication-service"
       ];
 
