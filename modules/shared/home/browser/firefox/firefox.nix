@@ -31,6 +31,8 @@ in
         "datareporting.healthreport.uploadEnabled" = false;
 
         "privacy.globalprivacycontrol.enabled" = true;
+
+        "signon.rememberSignons" = false;
       };
 
       extensions = {
