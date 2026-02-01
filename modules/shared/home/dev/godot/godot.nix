@@ -2,6 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    godot
+    godotPackages_4_6.godot
   ];
 }
