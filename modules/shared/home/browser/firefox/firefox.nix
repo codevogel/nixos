@@ -39,6 +39,7 @@ in
           firefoxAddons.bitwarden
           firefoxAddons.ublock-origin
           firefoxAddons.darkreader
+          firefoxAddons.sponsorblock
         ];
       };
     };
