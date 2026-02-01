@@ -7,6 +7,7 @@
   name,
   url,
   iconName ? name,
+  iconExtension ? "svg",
   desktopName ? name,
 }:
 
@@ -14,6 +15,6 @@
   ${name} = {
     name = desktopName;
     exec = "${chromium}/bin/chromium --profile-directory=Default --app=${url}";
-    icon = "${iconDir}/${iconName}.svg";
+    icon = "${iconDir}/${iconName}.${iconExtension}";
   };
 }
