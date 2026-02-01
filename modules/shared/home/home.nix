@@ -11,6 +11,7 @@
     ./shell/zsh/zsh.nix
     ./shell/oh-my-posh/oh-my-posh.nix
     ./browser/firefox/firefox.nix
+    ./browser/chromium/ungoogled-chromium.nix
     ./editor/nvim/nvim.nix
     ./wm/hypr/hyprland.nix
     ./audio/wiremix/wiremix.nix
