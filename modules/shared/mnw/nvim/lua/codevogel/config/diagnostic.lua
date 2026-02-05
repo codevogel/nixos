@@ -9,10 +9,12 @@ vim.diagnostic.config({
       [vim.diagnostic.severity.HINT] = "󰌶 ",
     },
   } or {},
+  underline = true,
   virtual_text = {
+    current_line = false,
     source = "if_many",
-    spacing = 2,
   },
-  -- Display multiline diagnostics as virtual lines
-  virtual_lines = true,
+  virtual_lines = {
+    current_line = true,
+  },
 })
