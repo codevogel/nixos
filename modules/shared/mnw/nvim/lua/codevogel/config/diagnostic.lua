@@ -12,7 +12,6 @@ vim.diagnostic.config({
   underline = true,
   virtual_text = {
     current_line = false,
-    source = "if_many",
   },
   virtual_lines = {
     current_line = true,
