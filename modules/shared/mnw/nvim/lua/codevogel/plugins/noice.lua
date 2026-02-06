@@ -18,6 +18,18 @@ return {
       inc_rename = false, -- enables an input dialog for inc-rename.nvim
       lsp_doc_border = true, -- add a border to hover docs and signature help
     },
+    routes = {
+      {
+        view = "messages",
+        filter = {
+          event = "msg_show",
+          kind = {
+            "shell_out",
+            "shell_err",
+          },
+        },
+      },
+    },
   },
   dependencies = {
     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
