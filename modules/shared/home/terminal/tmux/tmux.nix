@@ -13,7 +13,7 @@
     plugins = with pkgs.tmuxPlugins; [
       sensible
       {
-        plugin = kanagawa;
+        plugin = ukiyo;
         extraConfig = ''
           set -g @kanagawa-override-theme 'kanagawa'
           set -g @kanagawa-show-powerline true
