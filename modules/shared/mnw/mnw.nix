@@ -1,5 +1,6 @@
 # modules/mnw.nix
 {
+  inputs,
   pkgs,
   mnw,
   self,
@@ -7,7 +8,7 @@
 
 {
   mnw = mnw.lib.wrap pkgs {
-    neovim = pkgs.neovim-unwrapped;
+    neovim = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
 
     luaFiles = [ ./nvim/init.lua ];
 

@@ -11,6 +11,8 @@
 
     mnw.url = "github:Gerg-L/mnw";
 
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -50,7 +52,7 @@
         let
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           mnwPackages = import ./modules/shared/mnw/mnw.nix {
-            inherit pkgs mnw self;
+            inherit pkgs mnw self inputs;
           };
         in
         mnwPackages;
