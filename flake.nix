@@ -48,11 +48,21 @@
       ...
     }@inputs:
     {
+
       packages.x86_64-linux =
         let
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          pkgs = import nixpkgs {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
+
           mnwPackages = import ./modules/shared/mnw/mnw.nix {
-            inherit pkgs mnw self inputs;
+            inherit
+              pkgs
+              mnw
+              self
+              inputs
+              ;
           };
         in
         mnwPackages;

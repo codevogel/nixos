@@ -15,6 +15,7 @@
     extraBinPath = with pkgs; [
       ripgrep
       fzf
+      nodejs_24
 
       # LSP:
       lua-language-server
@@ -53,7 +54,6 @@
       # that are configured through Lazy.nvim
       opt = [
         pkgs.vimPlugins.plenary-nvim
-
         pkgs.vimPlugins.oil-nvim
         pkgs.vimPlugins.snacks-nvim
         pkgs.vimPlugins.lualine-nvim
@@ -115,6 +115,7 @@
         "nvim-colorizer.lua" = pkgs.vimPlugins.colorizer;
         "LuaSnip" = pkgs.vimPlugins.luasnip;
         "gdscript-extended-lsp.nvim" = pkgs.vimPlugins.gdscript-extended-lsp-nvim;
+        "copilot.vim" = pkgs.vimPlugins.copilot-vim;
       };
 
       dev.codevogel = {
