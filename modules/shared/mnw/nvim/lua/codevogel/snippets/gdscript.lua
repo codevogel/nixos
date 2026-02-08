@@ -64,4 +64,23 @@ var {}: {}:
 			}
 		)
 	),
+
+	-- validation snippet
+	-- validation snippet
+	s(
+		"getvalidation",
+		fmt(
+			[[
+func _get_validation_conditions() -> Array[ValidationCondition]:
+	var conditions: Array[ValidationCondition] = [
+		ValidationCondition.{}({})
+	]
+	return conditions
+]],
+			{
+				i(1, "type"), -- placeholder for type
+				i(2, "condition"), -- placeholder for condition
+			}
+		)
+	),
 }
