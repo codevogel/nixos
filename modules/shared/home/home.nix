@@ -33,6 +33,7 @@
     ./dev/vhs/vhs.nix
     ./dev/vscode/vscode.nix
     ./docs/obsidian.nix
+    ./calendar/khal/khal.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should

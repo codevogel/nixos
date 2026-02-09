@@ -53,6 +53,7 @@
         "clock" = {
           format = "{:%H:%M on %a %d-%m-%Y}";
           tooltip = false;
+          on-click = "kitty --title khal -e khal";
         };
 
         "mpris" = {
