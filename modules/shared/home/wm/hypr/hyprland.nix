@@ -21,6 +21,10 @@
       "$terminal" = "kitty";
       "$browser" = "firefox";
 
+      animation = [
+        "workspaces, 0"
+      ];
+
       general = {
         gaps_in = 0;
         gaps_out = 0;
