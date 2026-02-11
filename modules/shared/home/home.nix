@@ -32,6 +32,7 @@
     ./dev/blender/blender.nix
     ./dev/vhs/vhs.nix
     ./dev/vscode/vscode.nix
+    ./dev/dotnet/dotnet.nix
     ./docs/obsidian.nix
     ./calendar/khal/khal.nix
   ];
