@@ -66,6 +66,7 @@
         pkgs.vimPlugins.nvim-ts-autotag
         pkgs.vimPlugins.nvim-ts-context-commentstring
         pkgs.vimPlugins.nvim-notify
+        pkgs.vimPlugins.neogen
 
         {
           pname = "harpoon-lualine";
