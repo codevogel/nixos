@@ -11,6 +11,7 @@ return {
         svelte = { "prettierd" },
         ts = { "prettierd" },
         js = { "prettierd" },
+        cs = { "csharpier" },
       },
     })
     vim.api.nvim_create_autocmd("BufWritePre", {

@@ -34,6 +34,7 @@
       stylua
       nixfmt
       prettierd
+      csharpier
     ];
 
     # Along with listing the package here, each plugin should also be
