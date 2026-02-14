@@ -5,7 +5,24 @@ return {
     -- Servers to enable, with their config.
     -- Empty configs use the nvim-lspconfig defaults.
     local servers = {
-      lua_ls = {},
+      lua_ls = {
+        settings = {
+          Lua = {
+            diagnostics = {
+              globals = { "vim" },
+            },
+            workspace = {
+              library = {
+                vim.env.VIMRUNTIME,
+                unpack(vim.api.nvim_get_runtime_file("", true)),
+              },
+              checkThirdParty = false,
+            },
+            hint = { enable = true },
+            completion = { callSnippet = "Replace" },
+          },
+        },
+      },
       bashls = {},
       nixd = {},
       gdscript = {},
