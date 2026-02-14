@@ -18,14 +18,12 @@ return {
       pattern = "*",
       callback = function(args)
         require("conform").format({
-          async = true,
+          async = false,
           bufnr = args.buf,
           timeout_ms = 1000,
           lsp_format = "fallback",
         })
         require("hatch").hatch()
-        vim.diagnostic.disable()
-        vim.diagnostic.enable()
       end,
     })
   end,
