@@ -24,6 +24,8 @@ return {
           lsp_format = "fallback",
         })
         require("hatch").hatch()
+        vim.diagnostic.disable()
+        vim.diagnostic.enable()
       end,
     })
   end,
