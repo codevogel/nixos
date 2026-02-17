@@ -5,6 +5,12 @@ let
     inputs.nur.legacyPackages.${pkgs.stdenv.hostPlatform.system}.repos.rycee.firefox-addons;
 in
 {
+  xdg.mimeApps.defaultApplications = {
+    "text/html" = [ "firefox.desktop" ];
+    "x-scheme-handler/http" = [ "firefox.desktop" ];
+    "x-scheme-handler/https" = [ "firefox.desktop" ];
+  };
+
   programs.firefox = {
     enable = true;
 
