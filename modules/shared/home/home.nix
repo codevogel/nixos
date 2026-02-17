@@ -49,6 +49,9 @@
     EDITOR = "nvim";
   };
 
+  # Enable XDG MIME handling
+  xdg.mimeApps.enable = true;
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
