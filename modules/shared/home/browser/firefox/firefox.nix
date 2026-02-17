@@ -9,6 +9,7 @@ in
     "text/html" = [ "firefox.desktop" ];
     "x-scheme-handler/http" = [ "firefox.desktop" ];
     "x-scheme-handler/https" = [ "firefox.desktop" ];
+    "application/pdf" = [ "firefox.desktop" ];
   };
 
   programs.firefox = {
