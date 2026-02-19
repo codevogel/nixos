@@ -21,6 +21,22 @@
       "$terminal" = "kitty";
       "$browser" = "firefox";
 
+      windowrule = [
+        {
+          name = "Godot Float Internal Windows";
+          "match:class" = "^Godot$";
+          tile = "off";
+          float = "on";
+        }
+        {
+          name = "Godot Tile Main Window";
+          "match:class" = "^Godot$";
+          "match:initial_title" = "^Godot$";
+          tile = "on";
+          float = "off";
+        }
+      ];
+
       animation = [
         "workspaces, 0"
       ];
