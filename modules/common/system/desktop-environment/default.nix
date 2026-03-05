@@ -15,6 +15,7 @@
     ./audio.nix
     ./greeter.nix
     ./hyprland.nix
+    ./keymap.nix
   ];
 
   config = lib.mkIf config.host-options.desktop-environment.enable {
