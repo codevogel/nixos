@@ -1,0 +1,73 @@
+return {
+  "neovim/nvim-lspconfig",
+  lazy = false,
+  config = function()
+    -- Servers to enable, with their config.
+    -- Empty configs use the nvim-lspconfig defaults.
+    local servers = {
+      lua_ls = {
+        settings = {
+          Lua = {
+            diagnostics = {
+              globals = { "vim" },
+            },
+            workspace = {
+              library = {
+                vim.env.VIMRUNTIME,
+                unpack(vim.api.nvim_get_runtime_file("", true)),
+              },
+              checkThirdParty = false,
+            },
+            hint = { enable = true },
+            completion = { callSnippet = "Replace" },
+          },
+        },
+      },
+      bashls = {},
+      nixd = {},
+      gdscript = {},
+      gdshader_lsp = {},
+      svelte = {},
+      tsserver = {},
+      eslint = {},
+      cssls = {
+        settings = {
+          css = {
+            lint = {
+              unknownAtRules = "ignore",
+            },
+          },
+          scss = {
+            lint = {
+              unknownAtRules = "ignore",
+            },
+          },
+          less = {
+            lint = {
+              unknownAtRules = "ignore",
+            },
+          },
+        },
+      },
+    }
+
+    for server_name, cfg in pairs(servers) do
+      vim.lsp.config(server_name, cfg)
+      vim.lsp.enable(server_name)
+    end
+  end,
+  keys = {
+    {
+      "<leader>cr",
+      vim.lsp.buf.rename,
+      desc = "LSP: [C]ode [R]ename",
+      mode = "n",
+    },
+    {
+      "<leader>ca",
+      vim.lsp.buf.code_action,
+      desc = "LSP: [C]ode [A]ction",
+      mode = { "n", "x" },
+    },
+  },
+}

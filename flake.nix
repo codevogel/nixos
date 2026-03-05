@@ -80,7 +80,7 @@
             config.allowUnfree = true;
           };
 
-          mnwPackages = import ./modules/shared/mnw/mnw.nix {
+          mnwPackages = import ./modules/common/mnw/mnw.nix {
             inherit
               pkgs
               mnw
