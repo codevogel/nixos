@@ -11,6 +11,7 @@
     ./keymap.nix
     ./locale.nix
     ./networking.nix
+    ./sops.nix
     ./users.nix
   ];
 
