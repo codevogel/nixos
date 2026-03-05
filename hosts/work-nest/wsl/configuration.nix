@@ -7,6 +7,9 @@
   ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  wsl.enable = true;
+  wsl.defaultUser = "codevogel";
+
   host-options = {
     system = {
       boot.enable = false;
@@ -15,7 +18,9 @@
         enable = false;
       };
     };
+    home-manager = {
+      dev.gui.enable = false;
+    };
   };
-  wsl.enable = true;
-  wsl.defaultUser = "codevogel";
+
 }
