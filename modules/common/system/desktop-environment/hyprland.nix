@@ -7,12 +7,14 @@
 
 {
   options = {
-    host-options.desktop-environment.hyprland.enable = lib.mkEnableOption "Enable hyprland" // {
-      default = config.host-options.desktop-environment.enable;
-    };
+    host-options.system.desktop-environment.hyprland.enable =
+      lib.mkEnableOption "Enable desktop-environment.hyprland"
+      // {
+        default = config.host-options.system.desktop-environment.enable;
+      };
   };
 
-  config = lib.mkIf config.host-options.desktop-environment.hyprland.enable {
+  config = lib.mkIf config.host-options.system.desktop-environment.hyprland.enable {
 
     programs.hyprland.enable = true;
     environment.variables = {

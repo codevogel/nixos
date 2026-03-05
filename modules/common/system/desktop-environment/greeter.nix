@@ -7,12 +7,14 @@
 
 {
   options = {
-    host-options.desktop-environment.greeter.enable = lib.mkEnableOption "Enable greeter" // {
-      default = config.host-options.desktop-environment.enable;
-    };
+    host-options.system.desktop-environment.greeter.enable =
+      lib.mkEnableOption "Enable desktop-environment.greeter"
+      // {
+        default = config.host-options.system.desktop-environment.enable;
+      };
   };
 
-  config = lib.mkIf config.host-options.desktop-environment.greeter.enable {
+  config = lib.mkIf config.host-options.system.desktop-environment.greeter.enable {
     services.greetd = {
       enable = true;
 

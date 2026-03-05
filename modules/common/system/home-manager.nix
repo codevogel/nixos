@@ -8,10 +8,10 @@
 
 {
   options = {
-    host-options.home-manager.enable = lib.mkEnableOption "Enable home-manager" // {
-      default = true;
+    host-options.system.home-manager.enable = lib.mkEnableOption "Enable system.home-manager" // {
+      default = config.host-options.system.enable;
     };
-    host-options.home-manager.stateVersion = lib.mkOption {
+    host-options.system.home-manager.stateVersion = lib.mkOption {
       type = lib.types.str;
       default = "25.11";
       description = "The Home Manager state version to use. This should be set to the date of the latest Home Manager release that you want to use.";
@@ -20,7 +20,7 @@
 
   imports = [ inputs.home-manager.nixosModules.default ];
 
-  config = lib.mkIf config.host-options.home-manager.enable {
+  config = lib.mkIf config.host-options.system.home-manager.enable {
 
     home-manager = {
       useGlobalPkgs = true;
@@ -37,7 +37,7 @@
           # manage.
           home.username = "codevogel";
 
-          home.stateVersion = config.host-options.home-manager.stateVersion;
+          home.stateVersion = config.host-options.system.home-manager.stateVersion;
 
           home.sessionVariables = {
             EDITOR = "nvim";

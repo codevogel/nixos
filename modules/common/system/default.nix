@@ -1,4 +1,7 @@
-{ ... }:
+{
+  lib,
+  ...
+}:
 
 {
   imports = [
@@ -8,4 +11,11 @@
     ./locale.nix
     ./users.nix
   ];
+
+  options = {
+    host-options.system.enable = lib.mkEnableOption "Enable system" // {
+      default = true;
+    };
+  };
+
 }

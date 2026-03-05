@@ -7,12 +7,12 @@
 
 {
   options = {
-    host-options.users.enable = lib.mkEnableOption "Enable users" // {
-      default = true;
+    host-options.system.users.enable = lib.mkEnableOption "Enable users" // {
+      default = config.host-options.system.enable;
     };
   };
 
-  config = lib.mkIf config.host-options.users.enable {
+  config = lib.mkIf config.host-options.system.users.enable {
     programs.zsh.enable = true;
     users.users = {
       root = {

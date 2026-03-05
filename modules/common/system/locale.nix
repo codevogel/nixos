@@ -6,12 +6,12 @@
 
 {
   options = {
-    host-options.locale.enable = lib.mkEnableOption "Enable locale" // {
-      default = true;
+    host-options.system.locale.enable = lib.mkEnableOption "Enable system.locale" // {
+      default = config.host-options.system.enable;
     };
   };
 
-  config = lib.mkIf config.host-options.locale.enable {
+  config = lib.mkIf config.host-options.system.locale.enable {
     # Set your time zone.
     time.timeZone = "Europe/Amsterdam";
 
