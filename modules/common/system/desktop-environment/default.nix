@@ -6,6 +6,7 @@
 
 {
   imports = [
+    ./games/default.nix
     ./audio.nix
     ./greeter.nix
     ./hyprland.nix

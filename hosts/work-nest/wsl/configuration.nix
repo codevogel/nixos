@@ -10,9 +10,10 @@
   host-options = {
     system = {
       boot.enable = false;
-      desktop-environment.enable = false;
       networking.enable = false;
-      games.enable = false;
+      desktop-environment = {
+        enable = false;
+      };
     };
   };
   wsl.enable = true;

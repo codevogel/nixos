@@ -6,7 +6,6 @@
 {
   imports = [
     ./desktop-environment/default.nix
-    ./games/default.nix
     ./boot.nix
     ./home-manager.nix
     ./keymap.nix
