@@ -1,5 +1,6 @@
 {
   lib,
+  config,
   ...
 }:
 
@@ -12,7 +13,7 @@
     host-options.system.desktop-environment.games.enable =
       lib.mkEnableOption "Enable system.desktop-environment.games"
       // {
-        default = true;
+        default = config.host-options.system.desktop-environment.enable;
       };
   };
 

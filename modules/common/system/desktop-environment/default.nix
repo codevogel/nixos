@@ -16,7 +16,7 @@
     host-options.system.desktop-environment.enable =
       lib.mkEnableOption "Enable system.desktop-environment"
       // {
-        default = true;
+        default = config.host-options.system.enable;
       };
 
   };
