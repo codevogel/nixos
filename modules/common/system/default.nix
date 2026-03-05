@@ -8,7 +8,9 @@
     ./desktop-environment/default.nix
     ./boot.nix
     ./home-manager.nix
+    ./keymap.nix
     ./locale.nix
+    ./networking.nix
     ./users.nix
   ];
 

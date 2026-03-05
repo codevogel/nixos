@@ -7,9 +7,13 @@
   ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  host-options.system.boot.enable = false;
-  host-options.system.desktop-environment.enable = false;
-
+  host-options = {
+    system = {
+      boot.enable = false;
+      desktop-environment.enable = false;
+      networking.enable = false;
+    };
+  };
   wsl.enable = true;
   wsl.defaultUser = "codevogel";
 }
