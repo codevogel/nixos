@@ -1,0 +1,74 @@
+{
+  lib,
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
+
+{
+  options = {
+    host-options.home-manager.desktop-environment.browser.firefox.enable =
+      lib.mkEnableOption "Enable home-manager.desktop-environment.browser.firefox"
+      // {
+        default = config.host-options.home-manager.desktop-environment.browser.enable;
+      };
+  };
+
+  config = lib.mkIf config.host-options.home-manager.desktop-environment.browser.firefox.enable (
+    let
+      firefoxAddons =
+        inputs.nur.legacyPackages.${pkgs.stdenv.hostPlatform.system}.repos.rycee.firefox-addons;
+    in
+    {
+      xdg.mimeApps.defaultApplications = {
+        "text/html" = [ "firefox.desktop" ];
+        "x-scheme-handler/http" = [ "firefox.desktop" ];
+        "x-scheme-handler/https" = [ "firefox.desktop" ];
+        "application/pdf" = [ "firefox.desktop" ];
+      };
+
+      programs.firefox = {
+        enable = true;
+
+        profiles."codevogel" = {
+          settings = {
+            extensions = {
+              autoDisableScopes = 0;
+              update = {
+                autoUpdateDefault = false;
+                enabled = false;
+              };
+            };
+
+            "browser.newtabpage.activity-stream.showSearch" = false;
+            "browser.newtabpage.activity-stream.showSponsored" = false;
+            "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
+            "browser.newtabpage.activity-stream.showSponsoredCheckboxes" = false;
+
+            "browser.newtabpage.discoverystream.personalization.enabled" = false;
+            "browser.urlbar.quicksuggest.dataCollection.enabled" = false;
+
+            "datareporting.policy.dataSubmissionEnabled" = false;
+            "datareporting.usage.uploadEnabled" = false;
+            "datareporting.healthreport.uploadEnabled" = false;
+
+            "privacy.globalprivacycontrol.enabled" = true;
+
+            "signon.rememberSignons" = false;
+          };
+
+          extensions = {
+            force = true;
+            packages = [
+              firefoxAddons.bitwarden
+              firefoxAddons.ublock-origin
+              firefoxAddons.darkreader
+              firefoxAddons.sponsorblock
+            ];
+          };
+        };
+      };
+    }
+  );
+}
