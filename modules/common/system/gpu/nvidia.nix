@@ -6,14 +6,12 @@
 
 {
   options = {
-    host-options.system.desktop-environment.nvidia.enable =
-      lib.mkEnableOption "Enable system.desktop-environment.nvidia"
-      // {
-        default = config.host-options.system.desktop-environment.enable;
-      };
+    host-options.system.gpu.nvidia.enable = lib.mkEnableOption "Enable system.gpu.nvidia" // {
+      default = config.host-options.system.gpu.enable;
+    };
   };
 
-  config = lib.mkIf config.host-options.system.desktop-environment.nvidia.enable {
+  config = lib.mkIf config.host-options.system.gpu.nvidia.enable {
     hardware.graphics.enable = true;
     hardware.nvidia.open = lib.mkDefault false;
     hardware.nvidia.modesetting.enable = true;
