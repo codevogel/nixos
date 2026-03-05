@@ -2,8 +2,9 @@
 
 {
   imports = [
+    ./desktop-environment/default.nix
     ./boot.nix
     ./home-manager.nix
-    ./desktop-environment/default.nix
+    ./users.nix
   ];
 }
