@@ -9,6 +9,7 @@
     ./audio.nix
     ./greeter.nix
     ./hyprland.nix
+    ./nvidia.nix
   ];
 
   options = {
