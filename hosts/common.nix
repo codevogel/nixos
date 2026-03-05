@@ -1,6 +1,10 @@
 { lib, ... }:
 
 {
+  imports = [
+    ../modules/common/default.nix
+  ];
+
   nix.settings.experimental-features = lib.mkDefault [
     "nix-command"
     "flakes"

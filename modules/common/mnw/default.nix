@@ -1,3 +1,4 @@
+# modules/mnw.nix
 {
   inputs,
   pkgs,

@@ -74,13 +74,14 @@
     {
 
       packages.x86_64-linux =
+
         let
           pkgs = import nixpkgs {
             system = "x86_64-linux";
             config.allowUnfree = true;
           };
 
-          mnwPackages = import ./modules/common/mnw/mnw.nix {
+          mnwPackages = import ./modules/common/mnw/default.nix {
             inherit
               pkgs
               mnw
