@@ -59,6 +59,10 @@ let
         recording = {
           obs-studio = { };
         };
+
+        terminal-emulator = {
+          kitty = { };
+        };
       };
 
       dev = {
