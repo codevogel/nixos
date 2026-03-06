@@ -76,6 +76,7 @@ let
         pls = { };
 
         shell = {
+          tmux = { };
           git = { };
           lazygit = { };
           oh-my-posh = { };
