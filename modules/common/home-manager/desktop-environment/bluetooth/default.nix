@@ -1,7 +1,0 @@
-{ ... }:
-
-{
-  imports = [
-    ./bluetui.nix
-  ];
-}

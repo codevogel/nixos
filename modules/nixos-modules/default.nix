@@ -1,0 +1,48 @@
+{ ... }:
+
+{
+  imports = [
+    ./theme/stylix.nix
+    ./ungoogled-chromium/webapps/chatgpt.nix
+    ./ungoogled-chromium/webapps/claude.nix
+    ./ungoogled-chromium/webapps/discord.nix
+    ./ungoogled-chromium/webapps/github.nix
+    ./ungoogled-chromium/webapps/home-manager-search.nix
+    ./ungoogled-chromium/webapps/nixos-search.nix
+    ./ungoogled-chromium/webapps/whatsapp-web.nix
+    ./ungoogled-chromium/mkWebApp.nix
+    ./ungoogled-chromium/ungoogled-chromium.nix
+    ./audio.nix
+    ./bashly.nix
+    ./blender.nix
+    ./bluetooth.nix
+    ./boot.nix
+    ./dotnet.nix
+    ./formatters-and-linters.nix
+    ./godot.nix
+    ./greeter.nix
+    ./home-manager.nix
+    ./hyprland.nix
+    ./keymap.nix
+    ./lazygit.nix
+    ./locale.nix
+    ./nautilus.nix
+    ./neovim.nix
+    ./networking.nix
+    ./nodejs.nix
+    ./nvidia.nix
+    ./obs-studio.nix
+    ./obsidian.nix
+    ./peck.nix
+    ./playerctl.nix
+    ./qbittorrent.nix
+    ./sops.nix
+    ./spotify.nix
+    ./steam.nix
+    ./unityhub.nix
+    ./users.nix
+    ./vhs.nix
+    ./vlc.nix
+    ./vscode.nix
+  ];
+}
