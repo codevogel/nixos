@@ -9,5 +9,6 @@
     ./docs/default.nix
     ./downloader/default.nix
     ./file-explorer/default.nix
+    ./networking/default.nix
   ];
 }

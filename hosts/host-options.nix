@@ -86,6 +86,10 @@ let
         yazi = { };
       };
 
+      networking = {
+        gazelle = { };
+      };
+
     };
   };
 in
