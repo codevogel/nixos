@@ -4,6 +4,7 @@
   imports = [
     ../common.nix
     ./hardware-configuration.nix
+    ../../modules/home-nest/system/nvidia.nix
   ];
 
   host-options.home-manager.desktop-environment.wm.hyprland.settings.monitor = [
