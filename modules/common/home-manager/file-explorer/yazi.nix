@@ -1,14 +1,14 @@
 {
   lib,
   osConfig,
-  pkgs,
   ...
 }:
 
 {
   config = lib.mkIf osConfig.host-options.home-manager.file-explorer.yazi.enable {
-    home.packages = with pkgs; [
-      yazi
-    ];
+    programs.yazi = {
+      enable = true;
+      enableZshIntegration = true;
+    };
   };
 }
