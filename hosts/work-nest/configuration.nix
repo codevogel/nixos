@@ -4,6 +4,7 @@
   imports = [
     ../common.nix
     ./hardware-configuration.nix
+    ../../modules/work-nest/default.nix
   ];
 
   host-options.home-manager.desktop-environment.wm.hyprland.settings.monitor = [
