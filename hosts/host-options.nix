@@ -41,6 +41,10 @@ let
           firefox = { };
           ungoogled-chromium = { };
         };
+
+        file-explorer = {
+          nautilus = { };
+        };
       };
 
       dev = {
@@ -66,6 +70,10 @@ let
 
       downloader = {
         qbittorrent = { };
+      };
+
+      file-explorer = {
+        yazi = { };
       };
 
     };

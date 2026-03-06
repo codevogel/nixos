@@ -8,5 +8,6 @@
     ./dev/default.nix
     ./docs/default.nix
     ./downloader/default.nix
+    ./file-explorer/default.nix
   ];
 }
