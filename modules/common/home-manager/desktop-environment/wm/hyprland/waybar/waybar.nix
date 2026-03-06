@@ -140,91 +140,94 @@
 
           reload_style_on_change = true;
         }
-        // lib.mkIf osConfig.host-options.desktop-environment.wm.hyprland.laptop-modules.enable {
+        //
+          lib.mkIf
+            osConfig.host-options.home-manager.desktop-environment.wm.hyprland.waybar.laptop-modules.enable
+            {
 
-          mainBar = {
+              mainBar = {
 
-            "group/tray-expander" = {
-              orientation = "inherit";
+                "group/tray-expander" = {
+                  orientation = "inherit";
 
-              drawer = {
-                transition-duration = 600;
-                children-class = "tray-group-item";
+                  drawer = {
+                    transition-duration = 600;
+                    children-class = "tray-group-item";
+                  };
+
+                  modules = lib.mkAfter [
+                    "bluetooth"
+                    "battery"
+                    "backlight"
+                  ];
+                };
+
+                "backlight" = {
+                  device = "intel_backlight";
+                  format = "{icon}";
+                  format-icons = [
+                    "󰃞"
+                    "󰃟"
+                    "󰃠"
+                  ];
+                };
+
+                "bluetooth" = {
+                  format = "";
+                  format-disabled = "󰂲";
+                  format-connected = "󰂱";
+                  format-no-controller = "";
+                  tooltip-format = "Devices connected: {num_connections}";
+                  on-click = "sh -c 'rfkill unblock bluetooth && kitty --title bluetui -e bluetui'";
+                  on-click-right = "sh -c 'bluetoothctl power off && rfkill block bluetooth'";
+                };
+
+                "battery" = {
+                  format = "{capacity}% {icon}";
+                  format-discharging = "{icon}";
+                  format-charging = "{icon}";
+                  format-plugged = "";
+
+                  format-icons = {
+                    charging = [
+                      "󰢜"
+                      "󰂆"
+                      "󰂇"
+                      "󰂈"
+                      "󰢝"
+                      "󰂉"
+                      "󰢞"
+                      "󰂊"
+                      "󰂋"
+                      "󰂅"
+                    ];
+                    default = [
+                      "󰁺"
+                      "󰁻"
+                      "󰁼"
+                      "󰁽"
+                      "󰁾"
+                      "󰁿"
+                      "󰂀"
+                      "󰂁"
+                      "󰂂"
+                      "󰁹"
+                    ];
+                  };
+
+                  format-full = "󰂅";
+                  tooltip-format-discharging = "{power:>1.0f}W↓ {capacity}%";
+                  tooltip-format-charging = "{power:>1.0f}W↑ {capacity}%";
+                  interval = 5;
+
+                  states = {
+                    warning = 20;
+                    critical = 10;
+                  };
+                };
+
               };
-
-              modules = lib.mkAfter [
-                "bluetooth"
-                "battery"
-                "backlight"
-              ];
             };
-
-            "backlight" = {
-              device = "intel_backlight";
-              format = "{icon}";
-              format-icons = [
-                "󰃞"
-                "󰃟"
-                "󰃠"
-              ];
-            };
-
-            "bluetooth" = {
-              format = "";
-              format-disabled = "󰂲";
-              format-connected = "󰂱";
-              format-no-controller = "";
-              tooltip-format = "Devices connected: {num_connections}";
-              on-click = "sh -c 'rfkill unblock bluetooth && kitty --title bluetui -e bluetui'";
-              on-click-right = "sh -c 'bluetoothctl power off && rfkill block bluetooth'";
-            };
-
-            "battery" = {
-              format = "{capacity}% {icon}";
-              format-discharging = "{icon}";
-              format-charging = "{icon}";
-              format-plugged = "";
-
-              format-icons = {
-                charging = [
-                  "󰢜"
-                  "󰂆"
-                  "󰂇"
-                  "󰂈"
-                  "󰢝"
-                  "󰂉"
-                  "󰢞"
-                  "󰂊"
-                  "󰂋"
-                  "󰂅"
-                ];
-                default = [
-                  "󰁺"
-                  "󰁻"
-                  "󰁼"
-                  "󰁽"
-                  "󰁾"
-                  "󰁿"
-                  "󰂀"
-                  "󰂁"
-                  "󰂂"
-                  "󰁹"
-                ];
-              };
-
-              format-full = "󰂅";
-              tooltip-format-discharging = "{power:>1.0f}W↓ {capacity}%";
-              tooltip-format-charging = "{power:>1.0f}W↑ {capacity}%";
-              interval = 5;
-
-              states = {
-                warning = 20;
-                critical = 10;
-              };
-            };
-
-          };
-        };
       };
       style = builtins.readFile ./waybar.css;
     };
