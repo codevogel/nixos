@@ -19,4 +19,8 @@
     home-manager.dev.gui.enable = false;
   };
 
+  environment.pathsToLink = [
+    "/share/applications"
+    "/share/xdg-desktop-portal"
+  ];
 }
