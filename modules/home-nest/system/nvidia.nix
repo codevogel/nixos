@@ -1,0 +1,5 @@
+{ ... }:
+
+{
+  hardware.nvidia.open = true;
+}
