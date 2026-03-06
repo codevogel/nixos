@@ -4,6 +4,7 @@
   imports = [
     ./audio/default.nix
     ./browser/default.nix
+    ./bluetooth/default.nix
     ./file-explorer/default.nix
     ./launcher/default.nix
     ./media-player/default.nix

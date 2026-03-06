@@ -8,6 +8,7 @@
   imports = [
     ./games/default.nix
     ./audio.nix
+    ./bluetooth.nix
     ./greeter.nix
     ./hyprland.nix
   ];

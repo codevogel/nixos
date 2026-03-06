@@ -24,6 +24,13 @@ let
 
       desktop-environment = {
         audio = { };
+        bluetooth = {
+          enable = lib.mkOption {
+            type = lib.types.bool;
+            default = false;
+            description = "Whether to enable bluetooth capabilities.";
+          };
+        };
         hyprland = { };
         greeter = { };
 
@@ -38,6 +45,10 @@ let
         audio = {
           pamixer = { };
           wiremix = { };
+        };
+
+        bluetooth = {
+          bluetui = { };
         };
 
         browser = {

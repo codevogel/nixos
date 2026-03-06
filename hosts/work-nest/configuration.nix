@@ -11,4 +11,6 @@
     "eDP-1, 1920x1200, 0x0, 1"
     "DP-2, 1920x1080, 1920x0, 1"
   ];
+
+  host-options.system.desktop-environment.bluetooth.enable = true;
 }
