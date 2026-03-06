@@ -9,5 +9,6 @@
     ./media-player/default.nix
     ./recording/default.nix
     ./terminal-emulator/default.nix
+    ./wm/default.nix
   ];
 }

@@ -1,0 +1,67 @@
+window#waybar {
+	background-color: alpha(@base00, .85);
+	min-height: 0px;
+}
+
+#workspaces {
+	font-size: 16pt;
+	border-radius: 25px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#workspaces button {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	color: alpha(@base04, .2);
+}
+
+#workspaces button.active {
+	color: @base04;
+}
+
+#workspaces button.urgent {
+	color: @base09;
+}
+
+#mpris {
+	margin-left: 10rem;
+}
+
+.modules-left {
+	margin-left: 20px;
+}
+
+.modules-right {
+	margin-right: 20px;
+}
+
+.modules-right label {
+	font-size: 22pt;
+	margin-left: 10px;
+}
+
+#workspaces.windows {
+	padding-left: 10px;
+	min-width: 10rem;
+}
+
+#workspaces.windows button {
+	background-color: alpha(@base04, 0);
+}
+
+/* Show only the active window */
+#workspaces.windows .taskbar-window {
+	padding-left: 5px;
+	padding-right: 5px;
+	border-radius: 5px;
+	background-color: alpha(@base04, 0);
+}
+
+#workspaces.windows .taskbar-window.active {
+	background-color: alpha(@base04, 0.2);
+}
