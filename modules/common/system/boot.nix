@@ -5,12 +5,6 @@
 }:
 
 {
-  options = {
-    host-options.system.boot.enable = lib.mkEnableOption "Enable system.boot" // {
-      default = config.host-options.system.enable;
-    };
-  };
-
   config = lib.mkIf config.host-options.system.boot.enable {
     boot = {
       loader = {

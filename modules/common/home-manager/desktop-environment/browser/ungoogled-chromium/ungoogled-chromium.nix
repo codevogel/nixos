@@ -1,21 +1,13 @@
 {
   lib,
-  config,
+  osConfig,
   pkgs,
   ...
 }:
 
 {
-  options = {
-    host-options.home-manager.desktop-environment.browser.ungoogled-chromium.enable =
-      lib.mkEnableOption "Enable home-manager.desktop-environment.browser.ungoogled-chromium"
-      // {
-        default = config.host-options.home-manager.desktop-environment.browser.enable;
-      };
-  };
-
   config =
-    lib.mkIf config.host-options.home-manager.desktop-environment.browser.ungoogled-chromium.enable
+    lib.mkIf osConfig.host-options.home-manager.desktop-environment.browser.ungoogled-chromium.enable
       (
         let
           chromium = pkgs.ungoogled-chromium;

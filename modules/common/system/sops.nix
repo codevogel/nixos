@@ -5,12 +5,6 @@
 }:
 
 {
-  options = {
-    host-options.system.sops.enable = lib.mkEnableOption "Enable system.sops" // {
-      default = config.host-options.system.enable;
-    };
-  };
-
   config = lib.mkIf config.host-options.system.sops.enable {
     # This will add secrets.yml to the nix store
     # You can avoid this by adding a string to the full path instead, i.e.

@@ -1,18 +1,12 @@
 {
   lib,
-  config,
+  osConfig,
   pkgs,
   ...
 }:
 
 {
-  options = {
-    host-options.dev.pls.enable = lib.mkEnableOption "Enable dev.pls" // {
-      default = config.host-options.home-manager.dev.enable;
-    };
-  };
-
-  config = lib.mkIf config.host-options.dev.pls.enable (
+  config = lib.mkIf osConfig.host-options.home-manager.dev.pls.enable (
     let
       pls = pkgs.stdenv.mkDerivation {
         pname = "pls";

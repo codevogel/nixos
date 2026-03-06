@@ -5,14 +5,6 @@
 }:
 
 {
-  options = {
-    host-options.system.desktop-environment.audio.enable =
-      lib.mkEnableOption "Enable system.desktop-environment.audio"
-      // {
-        default = config.host-options.system.desktop-environment.enable;
-      };
-  };
-
   config = lib.mkIf config.host-options.system.desktop-environment.audio.enable {
     security.rtkit.enable = true;
     services = {

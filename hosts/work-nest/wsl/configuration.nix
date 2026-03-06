@@ -14,14 +14,9 @@
     system = {
       boot.enable = false;
       networking.enable = false;
-      desktop-environment = {
-        enable = false;
-      };
+      desktop-environment.enable = false;
     };
-  };
-
-  home-manager.users.codevogel = {
-    host-options.home-manager.dev.gui.enable = false;
+    home-manager.dev.gui.enable = false;
   };
 
 }

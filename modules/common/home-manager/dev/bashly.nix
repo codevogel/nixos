@@ -1,18 +1,12 @@
 {
   lib,
-  config,
+  osConfig,
   pkgs,
   ...
 }:
 
 {
-  options = {
-    host-options.dev.bashly.enable = lib.mkEnableOption "Enable dev.bashly" // {
-      default = config.host-options.home-manager.dev.enable;
-    };
-  };
-
-  config = lib.mkIf config.host-options.dev.bashly.enable {
+  config = lib.mkIf osConfig.host-options.home-manager.dev.bashly.enable {
     home.packages = with pkgs; [
       bashly
     ];

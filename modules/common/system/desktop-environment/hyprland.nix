@@ -6,14 +6,6 @@
 }:
 
 {
-  options = {
-    host-options.system.desktop-environment.hyprland.enable =
-      lib.mkEnableOption "Enable desktop-environment.hyprland"
-      // {
-        default = config.host-options.system.desktop-environment.enable;
-      };
-  };
-
   config = lib.mkIf config.host-options.system.desktop-environment.hyprland.enable {
 
     programs.hyprland.enable = true;

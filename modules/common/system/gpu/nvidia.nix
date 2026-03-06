@@ -5,12 +5,6 @@
 }:
 
 {
-  options = {
-    host-options.system.gpu.nvidia.enable = lib.mkEnableOption "Enable system.gpu.nvidia" // {
-      default = config.host-options.system.gpu.enable;
-    };
-  };
-
   config = lib.mkIf config.host-options.system.gpu.nvidia.enable {
     hardware.graphics.enable = true;
     hardware.nvidia.open = lib.mkDefault false;

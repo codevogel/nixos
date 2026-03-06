@@ -5,14 +5,6 @@
 }:
 
 {
-  options = {
-    host-options.system.desktop-environment.games.steam.enable =
-      lib.mkEnableOption "Enable system.desktop-environment.games.steam"
-      // {
-        default = config.host-options.system.desktop-environment.enable;
-      };
-  };
-
   config = lib.mkIf config.host-options.system.desktop-environment.games.steam.enable {
     programs.steam = {
       enable = true; # Master switch, already covered in installation

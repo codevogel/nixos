@@ -1,21 +1,13 @@
 {
   lib,
-  config,
+  osConfig,
   pkgs,
   inputs,
   ...
 }:
 
 {
-  options = {
-    host-options.home-manager.desktop-environment.browser.firefox.enable =
-      lib.mkEnableOption "Enable home-manager.desktop-environment.browser.firefox"
-      // {
-        default = config.host-options.home-manager.desktop-environment.browser.enable;
-      };
-  };
-
-  config = lib.mkIf config.host-options.home-manager.desktop-environment.browser.firefox.enable (
+  config = lib.mkIf osConfig.host-options.home-manager.desktop-environment.browser.firefox.enable (
     let
       firefoxAddons =
         inputs.nur.legacyPackages.${pkgs.stdenv.hostPlatform.system}.repos.rycee.firefox-addons;
