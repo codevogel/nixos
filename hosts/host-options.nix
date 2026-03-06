@@ -10,6 +10,7 @@ let
       sops = { };
       keymap = { };
       locale = { };
+      neovim = { };
       networking = { };
       users = { };
 
