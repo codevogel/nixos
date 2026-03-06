@@ -45,6 +45,10 @@ let
         file-explorer = {
           nautilus = { };
         };
+
+        launcher = {
+          walker = { };
+        };
       };
 
       dev = {
