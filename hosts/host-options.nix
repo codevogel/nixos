@@ -31,22 +31,6 @@ let
     };
 
     home-manager = {
-      dev = {
-        bashly = { };
-        dotnet = { };
-        formatters-and-linters = { };
-        nodejs = { };
-        vhs = { };
-        pls = { };
-
-        gui = {
-          blender = { };
-          godot = { };
-          unityhub = { };
-          vscode = { };
-        };
-      };
-
       desktop-environment = {
         audio = {
           pamixer = { };
@@ -58,6 +42,28 @@ let
           ungoogled-chromium = { };
         };
       };
+
+      dev = {
+        pls = { };
+
+        gui = {
+          blender = { };
+          godot = { };
+          unityhub = { };
+          vscode = { };
+        };
+
+        bashly = { };
+        dotnet = { };
+        formatters-and-linters = { };
+        nodejs = { };
+        vhs = { };
+      };
+
+      docs = {
+        obsidian = { };
+      };
+
     };
   };
 in
