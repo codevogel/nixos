@@ -66,7 +66,13 @@ let
 
         wm = {
           hyprland = {
-            waybar = { };
+            waybar = {
+              laptop-modules = lib.mkOption {
+                type = lib.types.bool;
+                default = true;
+                description = "Whether to enable laptop modules (battery, backlight, bluetooth).";
+              };
+            };
             settings.monitor = lib.mkOption {
               type = lib.types.listOf lib.types.str;
               default = [ ];
