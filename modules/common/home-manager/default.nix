@@ -1,6 +1,6 @@
 {
   lib,
-  config,
+  osConfig,
   inputs,
   ...
 }:
@@ -11,12 +11,14 @@
       # NOTE: This defaults to the value of config.system.home-manager.enable,
       # so that if the user disables home-manager at the system level,
       # it will also be disabled at the home-manager level
-      default = config.system.home-manager.enable;
+      default = osConfig.host-options.system.home-manager.enable;
     };
   };
 
   imports = [
     inputs.walker.homeManagerModules.default
     inputs.gazelle.homeModules.gazelle
+    ./desktop-environment/default.nix
+    ./dev/default.nix
   ];
 }
