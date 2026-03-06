@@ -69,7 +69,7 @@ let
             waybar = {
               laptop-modules = lib.mkOption {
                 type = lib.types.bool;
-                default = true;
+                default = false;
                 description = "Whether to enable laptop modules (battery, backlight, bluetooth).";
               };
             };
