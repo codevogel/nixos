@@ -49,6 +49,12 @@ let
         launcher = {
           walker = { };
         };
+
+        media-player = {
+          playerctl = { };
+          vlc = { };
+          spotify = { };
+        };
       };
 
       dev = {

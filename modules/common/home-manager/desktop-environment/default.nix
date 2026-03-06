@@ -6,5 +6,6 @@
     ./browser/default.nix
     ./file-explorer/default.nix
     ./launcher/default.nix
+    ./media-player/default.nix
   ];
 }
