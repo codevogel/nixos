@@ -62,13 +62,20 @@ let
       };
 
       dev = {
-        pls = { };
-
         gui = {
           blender = { };
           godot = { };
           unityhub = { };
           vscode = { };
+        };
+
+        pls = { };
+
+        shell = {
+          git = { };
+          lazygit = { };
+          oh-my-posh = { };
+          zsh = { };
         };
 
         bashly = { };
