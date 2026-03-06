@@ -115,6 +115,7 @@
           specialArgs = { inherit inputs self; };
           modules = [
             ./hosts/work-nest/wsl/configuration.nix
+            stylix.nixosModules.stylix
             sops-nix.nixosModules.sops
           ];
         };
