@@ -29,6 +29,8 @@ let
 
         games.steam = { };
       };
+
+      theme.stylix = { };
     };
 
     home-manager = {
