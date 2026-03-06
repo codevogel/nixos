@@ -6,5 +6,6 @@
     inputs.gazelle.homeModules.gazelle
     ./desktop-environment/default.nix
     ./dev/default.nix
+    ./downloader/default.nix
   ];
 }

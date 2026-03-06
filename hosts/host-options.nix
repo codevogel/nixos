@@ -64,6 +64,10 @@ let
         obsidian = { };
       };
 
+      downloader = {
+        qbittorrent = { };
+      };
+
     };
   };
 in
