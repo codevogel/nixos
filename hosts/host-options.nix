@@ -55,6 +55,10 @@ let
           vlc = { };
           spotify = { };
         };
+
+        recording = {
+          obs-studio = { };
+        };
       };
 
       dev = {

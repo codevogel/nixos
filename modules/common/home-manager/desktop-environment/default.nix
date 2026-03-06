@@ -7,5 +7,6 @@
     ./file-explorer/default.nix
     ./launcher/default.nix
     ./media-player/default.nix
+    ./recording/default.nix
   ];
 }
