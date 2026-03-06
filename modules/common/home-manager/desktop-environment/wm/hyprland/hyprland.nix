@@ -6,6 +6,7 @@
 
 {
   imports = [
+    ./waybar/waybar.nix
     ./mako.nix
     ./peck.nix
   ];
