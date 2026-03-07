@@ -6,12 +6,13 @@
 }:
 
 {
-  environment.systemPackages = with pkgs; [
-    pamixer
-    wiremix
-  ];
 
   config = lib.mkIf config.my.features.system.audio.enable {
+    environment.systemPackages = with pkgs; [
+      pamixer
+      wiremix
+    ];
+
     security.rtkit.enable = true;
     services = {
       pulseaudio.enable = false;
