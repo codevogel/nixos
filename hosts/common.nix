@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./host-options.nix
+    ./options.nix
     ../modules/common/default.nix
   ];
 
