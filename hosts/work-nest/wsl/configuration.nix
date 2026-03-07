@@ -10,17 +10,21 @@
   wsl.enable = true;
   wsl.defaultUser = "codevogel";
 
-  host-options = {
-    system = {
-      boot.enable = false;
-      networking.enable = false;
-      desktop-environment.enable = false;
-    };
-    home-manager.dev.gui.enable = false;
-  };
-
   environment.pathsToLink = [
     "/share/applications"
     "/share/xdg-desktop-portal"
   ];
+
+  my.features = {
+    profiles = {
+      desktop.enable = false;
+      wsl.enable = true;
+    };
+
+    system = {
+      boot.enable = false;
+      networking.enable = false;
+    };
+  };
+
 }
