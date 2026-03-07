@@ -1,12 +1,12 @@
 {
   lib,
-  osConfig,
+  config,
   pkgs,
   ...
 }:
 
 {
-  config = lib.mkIf osConfig.my.features.apps.media.vlc.enable {
+  config = lib.mkIf config.my.features.apps.media.vlc.enable {
     environment.systemPackages = with pkgs; [
       vlc
     ];

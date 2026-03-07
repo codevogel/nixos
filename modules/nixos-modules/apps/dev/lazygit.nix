@@ -1,12 +1,12 @@
 {
   lib,
-  osConfig,
+  config,
   pkgs,
   ...
 }:
 
 {
-  config = lib.mkIf osConfig.my.features.apps.dev.lazygit.enable {
+  config = lib.mkIf config.my.features.apps.dev.lazygit.enable {
     environment.systemPackages = with pkgs; [
       lazygit
     ];

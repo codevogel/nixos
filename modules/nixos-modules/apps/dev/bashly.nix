@@ -1,12 +1,12 @@
 {
   lib,
-  osConfig,
+  config,
   pkgs,
   ...
 }:
 
 {
-  config = lib.mkIf osConfig.my.features.apps.dev.bashly.enable {
+  config = lib.mkIf config.my.features.apps.dev.bashly.enable {
     environment.systemPackages = with pkgs; [
       bashly
     ];

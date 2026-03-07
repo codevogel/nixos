@@ -1,12 +1,12 @@
 {
   lib,
-  osConfig,
+  config,
   pkgs,
   ...
 }:
 
 {
-  config = lib.mkIf osConfig.my.features.apps.dev.vscode.enable {
+  config = lib.mkIf config.my.features.apps.dev.vscode.enable {
     environment.systemPackages = with pkgs; [
       vscode
     ];

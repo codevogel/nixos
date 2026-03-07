@@ -1,12 +1,12 @@
 {
   lib,
-  osConfig,
+  config,
   pkgs,
   ...
 }:
 
 {
-  config = lib.mkIf osConfig.my.features.apps.dev.formatters.enable {
+  config = lib.mkIf config.my.features.apps.dev.formatters.enable {
     environment.systemPackages = with pkgs; [
       prettier
       gdtoolkit_4

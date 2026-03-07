@@ -1,13 +1,13 @@
 {
   lib,
-  osConfig,
+  config,
   pkgs,
   ...
 }:
 
 {
   config =
-    lib.mkIf osConfig.my.features.apps.media.playerctl.enable
+    lib.mkIf config.my.features.apps.media.playerctl.enable
       {
         environment.systemPackages = with pkgs; [
           playerctl

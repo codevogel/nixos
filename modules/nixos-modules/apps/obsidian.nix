@@ -1,12 +1,12 @@
 {
   lib,
-  osConfig,
+  config,
   pkgs,
   ...
 }:
 
 {
-  config = lib.mkIf osConfig.my.features.apps.obsidian.enable {
+  config = lib.mkIf config.my.features.apps.obsidian.enable {
     environment.systemPackages = with pkgs; [
       obsidian
     ];

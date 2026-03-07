@@ -1,12 +1,12 @@
 {
   lib,
-  osConfig,
+  config,
   pkgs,
   ...
 }:
 
 {
-  config = lib.mkIf osConfig.my.features.apps.dev.unityhub.enable {
+  config = lib.mkIf config.my.features.apps.dev.unityhub.enable {
     environment.systemPackages = with pkgs; [
       unityhub
     ];

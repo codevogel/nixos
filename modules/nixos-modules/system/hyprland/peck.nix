@@ -1,12 +1,12 @@
 {
   lib,
-  osConfig,
+  config,
   pkgs,
   ...
 }:
 
 {
-  config = lib.mkIf osConfig.my.features.system.hyprland.peck.enable (
+  config = lib.mkIf config.my.features.system.hyprland.peck.enable (
     let
       peck = pkgs.stdenv.mkDerivation {
         pname = "peck";

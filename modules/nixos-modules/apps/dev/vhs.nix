@@ -1,12 +1,12 @@
 {
   lib,
-  osConfig,
+  config,
   pkgs,
   ...
 }:
 
 {
-  config = lib.mkIf osConfig.my.features.apps.dev.vhs.enable {
+  config = lib.mkIf config.my.features.apps.dev.vhs.enable {
     environment.systemPackages = with pkgs; [
       vhs
     ];

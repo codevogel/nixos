@@ -1,13 +1,13 @@
 {
   lib,
-  osConfig,
+  config,
   pkgs,
   ...
 }:
 
 {
   config =
-    lib.mkIf osConfig.my.features.apps.fileExplorer.nautilus.enable
+    lib.mkIf config.my.features.apps.fileExplorer.nautilus.enable
       {
         environment.systemPackages = with pkgs; [
           nautilus
