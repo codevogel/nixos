@@ -5,7 +5,7 @@
 }:
 
 {
-  config = lib.mkIf osConfig.host-options.home-manager.dev.shell.oh-my-posh.enable {
+  config = lib.mkIf osConfig.my.features.apps.dev.shell.ohMyPosh.enable {
     programs.oh-my-posh = {
       enable = true;
       useTheme = "patriksvensson";

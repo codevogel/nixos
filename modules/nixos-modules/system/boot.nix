@@ -5,7 +5,7 @@
 }:
 
 {
-  config = lib.mkIf config.host-options.system.boot.enable {
+  config = lib.mkIf config.my.features.system.boot.enable {
     boot = {
       loader = {
         systemd-boot.enable = true;

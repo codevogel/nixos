@@ -6,7 +6,7 @@
 }:
 
 {
-  config = lib.mkIf osConfig.host-options.home-manager.dev.gui.unityhub.enable {
+  config = lib.mkIf osConfig.my.features.apps.dev.unityhub.enable {
     environment.systemPackages = with pkgs; [
       unityhub
     ];

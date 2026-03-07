@@ -6,7 +6,7 @@
 }:
 
 {
-  config = lib.mkIf osConfig.host-options.home-manager.dev.gui.godot.enable {
+  config = lib.mkIf osConfig.my.features.apps.dev.godot.enable {
     environment.systemPackages = with pkgs; [
       godot
       #godotPAckages_4_6.godot

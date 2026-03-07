@@ -6,13 +6,11 @@
 }:
 
 {
+  config = lib.mkIf config.my.features.system.bluetooth.enable {
+    environment.systemPackages = with pkgs; [
+      bluetui
+    ];
 
-  environment.systemPackages = with pkgs; [
-    bluetui
-  ];
-
-  config = lib.mkIf config.host-options.system.desktop-environment.bluetooth.enable {
     hardware.bluetooth.enable = true;
-    host-options.home-manager.desktop-environment.bluetooth.bluetui.enable = true;
   };
 }

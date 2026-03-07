@@ -6,7 +6,7 @@
 }:
 
 {
-  config = lib.mkIf osConfig.host-options.home-manager.dev.pls.enable (
+  config = lib.mkIf osConfig.my.features.apps.dev.pls.enable (
     let
       pls = pkgs.stdenv.mkDerivation {
         pname = "pls";

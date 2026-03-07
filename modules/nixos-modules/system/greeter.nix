@@ -6,7 +6,7 @@
 }:
 
 {
-  config = lib.mkIf config.host-options.system.desktop-environment.greeter.enable {
+  config = lib.mkIf config.my.features.system.greeter.enable {
     services.greetd = {
       enable = true;
 

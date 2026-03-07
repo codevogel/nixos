@@ -117,8 +117,8 @@ in
         message = "my.features.system.steam requires my.features.profiles.desktop.";
       }
       {
-        assertion = !(f.apps.lazygit.enable && !f.system.git.enable);
-        message = "my.features.apps.lazygit requires my.features.system.git.";
+        assertion = !(f.apps.dev.lazygit.enable && !f.system.git.enable);
+        message = "my.features.apps.dev.lazygit requires my.features.system.git.";
       }
       {
         assertion = !(f.apps.gazelle.enable && !f.system.networking.enable);

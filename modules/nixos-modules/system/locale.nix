@@ -5,7 +5,7 @@
 }:
 
 {
-  config = lib.mkIf config.host-options.system.locale.enable {
+  config = lib.mkIf config.my.features.system.locale.enable {
     # Set your time zone.
     time.timeZone = "Europe/Amsterdam";
 

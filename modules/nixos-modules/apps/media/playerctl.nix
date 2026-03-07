@@ -7,7 +7,7 @@
 
 {
   config =
-    lib.mkIf osConfig.host-options.home-manager.desktop-environment.media-player.playerctl.enable
+    lib.mkIf osConfig.my.features.apps.media.playerctl.enable
       {
         environment.systemPackages = with pkgs; [
           playerctl

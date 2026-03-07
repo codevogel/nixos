@@ -6,7 +6,7 @@
 }:
 
 {
-  config = lib.mkIf osConfig.host-options.home-manager.dev.bashly.enable {
+  config = lib.mkIf osConfig.my.features.apps.dev.bashly.enable {
     environment.systemPackages = with pkgs; [
       bashly
     ];

@@ -6,7 +6,7 @@
 }:
 
 {
-  config = lib.mkIf osConfig.host-options.home-manager.dev.gui.vscode.enable {
+  config = lib.mkIf osConfig.my.features.apps.dev.vscode.enable {
     environment.systemPackages = with pkgs; [
       vscode
     ];

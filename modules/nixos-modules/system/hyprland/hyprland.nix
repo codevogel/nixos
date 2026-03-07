@@ -6,7 +6,7 @@
 }:
 
 {
-  config = lib.mkIf config.host-options.system.desktop-environment.hyprland.enable {
+  config = lib.mkIf config.my.features.system.hyprland.enable {
 
     programs.hyprland.enable = true;
     environment.variables = {

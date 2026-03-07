@@ -6,7 +6,7 @@
 }:
 
 {
-  config = lib.mkIf config.host-options.system.theme.stylix.enable {
+  config = lib.mkIf config.my.features.system.stylix.enable {
     stylix = {
       enable = true;
       base16Scheme = ./kanagawa.yaml;

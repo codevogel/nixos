@@ -6,7 +6,7 @@
 }:
 
 {
-  config = lib.mkIf osConfig.host-options.home-manager.dev.dotnet.enable {
+  config = lib.mkIf osConfig.my.features.apps.dev.dotnet.enable {
     environment.systemPackages = with pkgs; [
       dotnet-sdk_10
     ];

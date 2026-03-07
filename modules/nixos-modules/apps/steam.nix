@@ -5,7 +5,7 @@
 }:
 
 {
-  config = lib.mkIf config.host-options.system.desktop-environment.games.steam.enable {
+  config = lib.mkIf config.my.features.apps.steam.enable {
     programs.steam = {
       enable = true; # Master switch, already covered in installation
       remotePlay.openFirewall = true; # For Steam Remote Play

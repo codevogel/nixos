@@ -6,7 +6,7 @@
 }:
 
 {
-  config = lib.mkIf osConfig.host-options.home-manager.dev.shell.tmux.enable {
+  config = lib.mkIf osConfig.my.features.apps.dev.shell.tmux.enable {
     programs.tmux = {
       enable = true;
 

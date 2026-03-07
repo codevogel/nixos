@@ -9,7 +9,7 @@
 {
   imports = [ inputs.home-manager.nixosModules.default ];
 
-  config = lib.mkIf config.host-options.system.home-manager.enable {
+  config = lib.mkIf config.my.features.system.homeManager.enable {
 
     home-manager = {
       useGlobalPkgs = true;
@@ -18,7 +18,7 @@
       users = {
         "codevogel" = {
           imports = [
-            ../home-manager/default.nix
+            ../../hm-modules/default.nix
           ];
           programs.home-manager.enable = true;
 
@@ -26,7 +26,7 @@
           # manage.
           home.username = "codevogel";
 
-          home.stateVersion = config.host-options.system.home-manager.stateVersion;
+          home.stateVersion = config.system.stateVersion;
 
           home.sessionVariables = {
             EDITOR = "nvim";

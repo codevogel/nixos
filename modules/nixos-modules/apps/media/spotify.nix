@@ -7,7 +7,7 @@
 
 {
   config =
-    lib.mkIf osConfig.host-options.home-manager.desktop-environment.media-player.spotify.enable
+    lib.mkIf osConfig.my.features.apps.media.spotify.enable
       {
         environment.systemPackages = with pkgs; [
           spotify

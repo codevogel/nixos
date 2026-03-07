@@ -6,7 +6,7 @@
 }:
 
 {
-  config = lib.mkIf osConfig.host-options.home-manager.docs.obsidian.enable {
+  config = lib.mkIf osConfig.my.features.apps.obsidian.enable {
     environment.systemPackages = with pkgs; [
       obsidian
     ];

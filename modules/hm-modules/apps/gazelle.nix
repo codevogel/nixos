@@ -7,7 +7,7 @@
 }:
 
 {
-  config = lib.mkIf osConfig.host-options.home-manager.networking.gazelle.enable {
+  config = lib.mkIf osConfig.my.features.apps.gazelle.enable {
     home.packages = [
       inputs.gazelle.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];

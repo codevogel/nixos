@@ -11,7 +11,7 @@
     wiremix
   ];
 
-  config = lib.mkIf config.host-options.system.desktop-environment.audio.enable {
+  config = lib.mkIf config.my.features.system.audio.enable {
     security.rtkit.enable = true;
     services = {
       pulseaudio.enable = false;

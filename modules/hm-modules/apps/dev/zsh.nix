@@ -6,7 +6,7 @@
 }:
 
 {
-  config = lib.mkIf osConfig.host-options.home-manager.dev.shell.zsh.enable {
+  config = lib.mkIf osConfig.my.features.apps.dev.shell.zsh.enable {
     programs.zsh = {
       enable = true;
       enableCompletion = true;

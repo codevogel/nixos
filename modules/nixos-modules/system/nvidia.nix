@@ -5,7 +5,7 @@
 }:
 
 {
-  config = lib.mkIf config.host-options.system.gpu.nvidia.enable {
+  config = lib.mkIf config.my.features.system.nvidia.enable {
     hardware.graphics.enable = true;
     hardware.nvidia.open = lib.mkDefault false;
     hardware.nvidia.modesetting.enable = true;

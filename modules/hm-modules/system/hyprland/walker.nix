@@ -5,7 +5,7 @@
 }:
 
 {
-  config = lib.mkIf osConfig.host-options.home-manager.desktop-environment.launcher.walker.enable {
+  config = lib.mkIf osConfig.my.features.system.hyprland.walker.enable {
     programs.walker.enable = true;
   };
 }

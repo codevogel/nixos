@@ -5,7 +5,7 @@
 }:
 
 {
-  config = lib.mkIf osConfig.host-options.home-manager.desktop-environment.wm.hyprland.enable {
+  config = lib.mkIf osConfig.my.features.system.hyprland.enable {
 
     # Hint electron apps to use WL
     home.sessionVariables.NIXOS_OZONE_WL = "1";
@@ -17,7 +17,7 @@
         "$terminal" = "kitty";
         "$browser" = "firefox";
 
-        #monitor = lib.mkIf osConfig.host-options.home-manager.desktop-environment.wm.hyprland.settings.monitor.enable osConfig.host-options.home-manager.desktop-environment.wm.hyprland.settings.monitor;
+        #monitor = lib.mkIf osConfig.my.features.system.hyprland.settings.monitor.enable osConfig.my.features.system.hyprland.settings.monitor;
 
         windowrule = [
           {

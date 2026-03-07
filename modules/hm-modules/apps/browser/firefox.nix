@@ -7,7 +7,7 @@
 }:
 
 {
-  config = lib.mkIf osConfig.host-options.home-manager.desktop-environment.browser.firefox.enable (
+  config = lib.mkIf osConfig.my.features.apps.browser.firefox.enable (
     let
       firefoxAddons =
         inputs.nur.legacyPackages.${pkgs.stdenv.hostPlatform.system}.repos.rycee.firefox-addons;

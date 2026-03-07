@@ -6,7 +6,7 @@
 }:
 
 {
-  config = lib.mkIf config.host-options.system.users.enable {
+  config = lib.mkIf config.my.features.system.users.enable {
     programs.zsh.enable = true;
     users.users = {
       root = {

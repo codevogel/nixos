@@ -6,7 +6,7 @@
 }:
 
 {
-  config = lib.mkIf osConfig.host-options.home-manager.dev.vhs.enable {
+  config = lib.mkIf osConfig.my.features.apps.dev.vhs.enable {
     environment.systemPackages = with pkgs; [
       vhs
     ];

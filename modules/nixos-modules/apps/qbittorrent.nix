@@ -6,7 +6,7 @@
 }:
 
 {
-  config = lib.mkIf osConfig.host-options.home-manager.downloader.qbittorrent.enable {
+  config = lib.mkIf osConfig.my.features.apps.qbittorrent.enable {
     environment.systemPackages = with pkgs; [
       qbittorrent
     ];

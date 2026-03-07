@@ -7,7 +7,7 @@
 
 {
   config =
-    lib.mkIf osConfig.host-options.home-manager.desktop-environment.recording.obs-studio.enable
+    lib.mkIf osConfig.my.features.apps.media.obsStudio.enable
       {
         environment.systemPackages = with pkgs; [
           obs-studio

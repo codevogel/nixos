@@ -5,7 +5,7 @@
 }:
 
 {
-  config = lib.mkIf config.host-options.system.keymap.enable {
+  config = lib.mkIf config.my.features.system.keymap.enable {
     # Set keymap for x11
     services.xserver.xkb = {
       layout = "us";

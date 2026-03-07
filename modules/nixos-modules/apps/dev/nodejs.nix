@@ -6,7 +6,7 @@
 }:
 
 {
-  config = lib.mkIf osConfig.host-options.home-manager.dev.nodejs.enable {
+  config = lib.mkIf osConfig.my.features.apps.dev.nodejs.enable {
     environment.systemPackages = with pkgs; [
       nodejs
       pnpm

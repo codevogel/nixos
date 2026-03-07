@@ -7,7 +7,7 @@
 
 {
   config =
-    lib.mkIf osConfig.host-options.home-manager.desktop-environment.file-explorer.nautilus.enable
+    lib.mkIf osConfig.my.features.apps.fileExplorer.nautilus.enable
       {
         environment.systemPackages = with pkgs; [
           nautilus

@@ -6,7 +6,7 @@
 }:
 
 {
-  config = lib.mkIf osConfig.host-options.home-manager.dev.formatters-and-linters.enable {
+  config = lib.mkIf osConfig.my.features.apps.dev.formatters.enable {
     environment.systemPackages = with pkgs; [
       prettier
       gdtoolkit_4

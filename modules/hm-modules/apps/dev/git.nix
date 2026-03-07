@@ -5,7 +5,7 @@
 }:
 
 {
-  config = lib.mkIf osConfig.host-options.home-manager.dev.shell.git.enable {
+  config = lib.mkIf osConfig.my.features.system.git.enable {
     programs.git = {
       enable = true;
       settings.user = {

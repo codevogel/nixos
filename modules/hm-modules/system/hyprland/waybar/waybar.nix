@@ -6,7 +6,7 @@
 
 {
   config =
-    lib.mkIf (osConfig.host-options.home-manager.desktop-environment.wm.hyprland.enable or false)
+    lib.mkIf (osConfig.my.features.system.hyprland.waybar.enable or false)
       {
         programs.waybar = {
           enable = true;
@@ -138,7 +138,7 @@
                       "tray"
                     ]
                     (lib.optionals
-                      (osConfig.host-options.home-manager.desktop-environment.wm.hyprland.waybar.laptop-modules.enable
+                      (osConfig.my.features.system.hyprland.waybar.laptopModules.enable
                         or false
                       )
                       [
@@ -165,7 +165,7 @@
 
               # Laptop-specific modules (attributes)
               (lib.mkIf
-                (osConfig.host-options.home-manager.desktop-environment.wm.hyprland.waybar.laptop-modules.enable
+                (osConfig.my.features.system.hyprland.waybar.laptopModules.enable
                   or false
                 )
                 {

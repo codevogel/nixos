@@ -5,7 +5,7 @@
 }:
 
 {
-  config = lib.mkIf osConfig.host-options.home-manager.file-explorer.yazi.enable {
+  config = lib.mkIf osConfig.my.features.apps.fileExplorer.yazi.enable {
     programs.yazi = {
       enable = true;
       enableZshIntegration = true;

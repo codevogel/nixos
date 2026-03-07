@@ -6,7 +6,7 @@
 }:
 
 {
-  config = lib.mkIf osConfig.host-options.home-manager.desktop-environment.wm.hyprland.enable {
+  config = lib.mkIf osConfig.my.features.system.hyprland.mako.enable {
     home.packages = with pkgs; [
       mako
       libnotify

@@ -7,27 +7,26 @@
 
 {
   config =
-    lib.mkIf osConfig.host-options.home-manager.desktop-environment.browser.ungoogled-chromium.enable
-      (
-        let
-          chromium = pkgs.ungoogled-chromium;
+    lib.mkIf osConfig.my.features.apps.browser.ungoogledChromium.enable (
+      let
+        chromium = pkgs.ungoogled-chromium;
 
-          iconDir = ./webapps/icons;
+        iconDir = ./webapps/icons;
 
-          mkWebApp = import ./mkWebApp.nix {
-            inherit chromium iconDir;
-          };
+        mkWebApp = import ./mkWebApp.nix {
+          inherit chromium iconDir;
+        };
 
-          webappFiles = builtins.attrNames (builtins.readDir ./webapps);
+        webappFiles = builtins.attrNames (builtins.readDir ./webapps);
 
-          filtered = builtins.filter (f: f != "icons" && pkgs.lib.hasSuffix ".nix" f) webappFiles;
+        filtered = builtins.filter (f: f != "icons" && pkgs.lib.hasSuffix ".nix" f) webappFiles;
 
-          webapps = map (f: import (./webapps + "/${f}") { inherit mkWebApp; }) filtered;
-        in
-        {
-          home.packages = [ chromium ];
+        webapps = map (f: import (./webapps + "/${f}") { inherit mkWebApp; }) filtered;
+      in
+      {
+        home.packages = [ chromium ];
 
-          xdg.desktopEntries = builtins.foldl' (a: b: a // b) { } webapps;
-        }
-      );
+        xdg.desktopEntries = builtins.foldl' (a: b: a // b) { } webapps;
+      }
+    );
 }
