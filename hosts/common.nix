@@ -3,7 +3,8 @@
 {
   imports = [
     ./options.nix
-    ../modules/common/default.nix
+    ../modules/nixos-modules/default.nix
+    ../modules/hm-modules/default.nix
   ];
 
   nix.settings.experimental-features = lib.mkDefault [
