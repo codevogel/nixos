@@ -135,7 +135,7 @@
 
       dev.codevogel = {
         pure = ./nvim;
-        impure = "~/nixos/modules/common/mnw/nvim/";
+        impure = "~/nixos/modules/mnw/nvim/";
       };
     };
   };
