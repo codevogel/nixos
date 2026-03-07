@@ -3,15 +3,6 @@
 {
   imports = [
     ./system/theme/stylix.nix
-    ./apps/browser/ungoogled-chromium/webapps/chatgpt.nix
-    ./apps/browser/ungoogled-chromium/webapps/claude.nix
-    ./apps/browser/ungoogled-chromium/webapps/discord.nix
-    ./apps/browser/ungoogled-chromium/webapps/github.nix
-    ./apps/browser/ungoogled-chromium/webapps/home-manager-search.nix
-    ./apps/browser/ungoogled-chromium/webapps/nixos-search.nix
-    ./apps/browser/ungoogled-chromium/webapps/whatsapp-web.nix
-    ./apps/browser/ungoogled-chromium/mkWebApp.nix
-    ./apps/browser/ungoogled-chromium/ungoogled-chromium.nix
     ./system/audio.nix
     ./apps/dev/bashly.nix
     ./apps/dev/blender.nix

@@ -63,7 +63,6 @@ in
       browser = {
         enable = mkFeat { default = f.profiles.desktop.enable; };
         firefox.enable = mkFeat { default = f.apps.browser.enable; };
-        ungoogledChromium.enable = mkFeat { default = f.apps.browser.enable; };
       };
 
       gazelle.enable = mkFeat { default = f.system.networking.enable; };
