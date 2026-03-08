@@ -10,7 +10,7 @@
 
   stylix = {
     fonts = {
-      sizes.applications = lib.mkForce 12;
+      sizes.applications = 10;
     };
   };
 
