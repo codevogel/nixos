@@ -12,6 +12,7 @@ return {
         ts = { "prettierd" },
         js = { "prettierd" },
         cs = { "csharpier" },
+        yaml = { "prettierd" },
       },
     })
     vim.api.nvim_create_autocmd("BufWritePre", {
