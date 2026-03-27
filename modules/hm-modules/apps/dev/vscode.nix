@@ -10,27 +10,41 @@
     programs.vscode = {
       enable = true;
 
-      profiles.default.extensions =
-        with pkgs.vscode-extensions;
-        [
-          vscodevim.vim
-        ]
-        ++ lib.optionals osConfig.my.features.apps.dev.vscode.extensions.csharp.enable [
-          csharpier.csharpier-vscode
-          ms-dotnettools.csharp
-        ];
-    };
-
-    programs.nix-ld.libraries =
-      lib.optionals osConfig.my.features.apps.dev.vscode.extensions.csharp.enable
-        (
-          with pkgs;
+      profiles.default = {
+        enableUpdateCheck = false;
+        enableExtensionUpdateCheck = false;
+        extensions =
+          with pkgs.vscode-extensions;
           [
-            stdenv.cc.cc.lib
-            zlib
-            openssl
-            icu
+            vscodevim.vim
           ]
-        );
+          ++ lib.optionals osConfig.my.features.apps.dev.vscode.extensions.csharp.enable [
+            csharpier.csharpier-vscode
+            ms-dotnettools.csharp
+            ms-dotnettools.csdevkit
+            ms-dotnettools.vscode-dotnet-runtime
+            ms-dotnettools.vscodeintellicode-csharp
+          ]
+          ++ lib.optionals osConfig.my.features.apps.dev.vscode.extensions.nix.enable [
+            bbenoist.nix
+          ]
+          ++ lib.optionals osConfig.my.features.apps.dev.vscode.extensions.copilot.enable [
+            github.copilot
+            github.copilot-chat
+          ]
+          ++ lib.optionals osConfig.my.features.apps.dev.vscode.extensions.godot.enable [
+            geequlim.godot-tools
+          ]
+          ++
+            lib.optionals
+              (
+                osConfig.my.features.apps.dev.vscode.extensions.csharp.enable
+                && osConfig.my.features.apps.dev.vscode.extensions.godot.enable
+              )
+              [
+                woberg.godot-dotnet-tools
+              ];
+      };
+    };
   };
 }
