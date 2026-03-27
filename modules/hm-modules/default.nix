@@ -15,5 +15,6 @@
     ./system/hyprland/walker.nix
     ./apps/file-explorer/yazi.nix
     ./apps/dev/zsh.nix
+    ./apps/dev/vscode.nix
   ];
 }

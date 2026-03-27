@@ -34,6 +34,5 @@
     ./system/users.nix
     ./apps/dev/vhs.nix
     ./apps/media/vlc.nix
-    ./apps/dev/vscode.nix
   ];
 }

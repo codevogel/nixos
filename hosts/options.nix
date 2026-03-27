@@ -16,8 +16,14 @@ in
 {
   options.my.features = {
     profiles = {
-      desktop.enable = mkFeat { name = "Desktop profile bundle."; default = true; };
-      wsl.enable = mkFeat { name = "WSL profile bundle."; default = false; };
+      desktop.enable = mkFeat {
+        name = "Desktop profile bundle.";
+        default = true;
+      };
+      wsl.enable = mkFeat {
+        name = "WSL profile bundle.";
+        default = false;
+      };
     };
 
     system = {
