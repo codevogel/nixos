@@ -97,7 +97,14 @@ in
         blender.enable = mkFeat { default = f.apps.dev.enable && f.profiles.desktop.enable; };
         godot.enable = mkFeat { default = f.apps.dev.enable && f.profiles.desktop.enable; };
         unityhub.enable = mkFeat { default = f.apps.dev.enable && f.profiles.desktop.enable; };
-        vscode.enable = mkFeat { default = f.apps.dev.enable && f.profiles.desktop.enable; };
+        vscode = {
+          enable = mkFeat { default = f.apps.dev.enable && f.profiles.desktop.enable; };
+          extensions = {
+            enable = mkFeat { default = f.apps.dev.vscode.enable; };
+            vim.enable = mkFeat { default = f.apps.dev.vscode.enable; };
+            csharp.enable = mkFeat { default = f.apps.dev.vscode.enable; };
+          };
+        };
 
         # Shell
         shell = {
