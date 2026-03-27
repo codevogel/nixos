@@ -104,6 +104,9 @@ in
             enable = mkFeat { default = f.apps.dev.vscode.enable; };
             vim.enable = mkFeat { default = f.apps.dev.vscode.enable; };
             csharp.enable = mkFeat { default = f.apps.dev.vscode.enable; };
+            nix.enable = mkFeat { default = f.apps.dev.vscode.enable; };
+            copilot.enable = mkFeat { default = f.apps.dev.vscode.enable; };
+            godot.enable = mkFeat { default = f.apps.dev.vscode.enable && f.apps.dev.godot.enable; };
           };
         };
 
