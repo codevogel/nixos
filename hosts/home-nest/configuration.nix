@@ -9,6 +9,7 @@
   my.features.apps.steam.enable = true;
   my.features.system.nvidia.enable = true;
   my.features.system.bluetooth.enable = false;
+  my.features.system.jmtpfs.enable = true;
 
   hardware.nvidia.open = true;
 

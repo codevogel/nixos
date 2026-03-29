@@ -39,6 +39,7 @@ in
       stylix.enable = mkFeat { default = true; };
       nix-ld.enable = mkFeat { default = true; };
       nvidia.enable = mkFeat { default = false; };
+      jmtpfs.enable = mkFeat { default = false; };
       hyprland = {
         enable = mkFeat { default = f.profiles.desktop.enable; };
         waybar = {
