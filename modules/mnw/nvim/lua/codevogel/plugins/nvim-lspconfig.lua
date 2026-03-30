@@ -69,5 +69,15 @@ return {
       desc = "LSP: [C]ode [A]ction",
       mode = { "n", "x" },
     },
+    "<leader>lrg",
+    function()
+      for _, client in ipairs(vim.lsp.get_clients()) do
+        if client.name == "gdscript" then
+          client:stop()
+        end
+      end
+      vim.lsp.enable("gdscript")
+    end,
+    desc = "[L]SP: [R]restart [G]dscript",
   },
 }
