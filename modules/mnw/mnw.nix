@@ -73,6 +73,7 @@
         pkgs.vimPlugins.nvim-notify
         pkgs.vimPlugins.neogen
         pkgs.vimPlugins.nvim-lint
+        pkgs.vimPlugins.zen-mode-nvim
 
         {
           pname = "harpoon-lualine";
