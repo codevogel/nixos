@@ -68,19 +68,7 @@
         pkgs.vimPlugins.nvim-ts-context-commentstring
         pkgs.vimPlugins.nvim-notify
         pkgs.vimPlugins.neogen
-
-        #TODO: replace with pkgs.vimPlugins once codeberg is back up
-        {
-          pname = "nvim-lint";
-
-          src = pkgs.fetchFromGitHub {
-            owner = "mfussenegger";
-            repo = "nvim-lint";
-            rev = "606b823a57b027502a9ae00978ebf4f5d5158098";
-            hash = "sha256-WotyvU8lqfjN3PVXVpDQm7HMahmwYRYgTN0+WsJwyWQ=";
-          };
-
-        }
+        pkgs.vimPlugins.nvim-lint
 
         {
           pname = "harpoon-lualine";
