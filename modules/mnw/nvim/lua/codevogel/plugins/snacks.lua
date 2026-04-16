@@ -19,7 +19,7 @@ return {
     scroll = { enabled = true },
     statuscolumn = { enabled = true },
     words = { enabled = true },
-    zen = { enabled = true },
+    zen = { enabled = true, win = { backdrop = { transparent = false } } },
   },
   keys = {
     ---- explorer
@@ -108,7 +108,7 @@ return {
     },
     ---- zen
     {
-      "<leader>z",
+      "<leader>tz",
       function()
         Snacks.zen()
       end,
