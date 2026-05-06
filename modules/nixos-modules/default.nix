@@ -15,7 +15,6 @@
     ./system/home-manager.nix
     ./system/hyprland/hyprland.nix
     ./system/keymap.nix
-    ./apps/dev/lazygit.nix
     ./system/locale.nix
     ./apps/file-explorer/nautilus.nix
     ./system/neovim.nix

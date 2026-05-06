@@ -87,6 +87,7 @@ in
 
         # CLI
         lazygit.enable = mkFeat { default = f.apps.dev.enable; };
+        delta.enable = mkFeat { default = f.apps.dev.enable; };
         bashly.enable = mkFeat { default = f.apps.dev.enable; };
         dotnet.enable = mkFeat { default = f.apps.dev.enable; };
         nodejs.enable = mkFeat { default = f.apps.dev.enable; };

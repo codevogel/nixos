@@ -16,5 +16,7 @@
     ./apps/file-explorer/yazi.nix
     ./apps/dev/zsh.nix
     ./apps/dev/vscode.nix
+    ./apps/dev/lazygit.nix
+    ./apps/dev/delta.nix
   ];
 }
