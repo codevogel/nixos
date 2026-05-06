@@ -10,6 +10,7 @@
     "nix-command"
     "flakes"
   ];
+  nix.settings.download-buffer-size = lib.mkDefault 134217728; # 128 MiB
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = lib.mkDefault true;
