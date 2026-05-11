@@ -124,6 +124,7 @@
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
+          "nestvim",
           "neovim-nightly-overlay",
           "nixpkgs"
         ]
@@ -278,15 +279,15 @@
     },
     "mnw": {
       "locked": {
-        "lastModified": 1771285028,
-        "narHash": "sha256-mR8GDvGPu1QcI5Ft5lV2CIIh5Og7zRylts+XY3fa/K4=",
-        "owner": "Gerg-L",
+        "lastModified": 1778111118,
+        "narHash": "sha256-WJPAjh5dGgv3U2CNRESYP+5q3g1kx8EWINKDI2RAhec=",
+        "owner": "gerg-l",
         "repo": "mnw",
-        "rev": "6bd6ab9968c2432c78db4a91c9b1e84dd84fe6b3",
+        "rev": "0902144a302ff3b43fca93cd62575a626b3e5226",
         "type": "github"
       },
       "original": {
-        "owner": "Gerg-L",
+        "owner": "gerg-l",
         "repo": "mnw",
         "type": "github"
       }
@@ -296,15 +297,16 @@
         "flake-parts": "flake-parts",
         "neovim-src": "neovim-src",
         "nixpkgs": [
+          "nestvim",
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1778025881,
-        "narHash": "sha256-sN4rYYhk5gK5CSqkO5p+eqFyBww4wXStUqdrKdedwMo=",
+        "lastModified": 1778285091,
+        "narHash": "sha256-4YwkGkjvLD0EB7rQGCRA9J/zgwrnTL20dJd7Wmnicj0=",
         "owner": "nix-community",
         "repo": "neovim-nightly-overlay",
-        "rev": "139134f5ae988ee21ec268b743a7552e0e13bd76",
+        "rev": "cca2a2d1c03f763fdcd7066791363d792313c641",
         "type": "github"
       },
       "original": {
@@ -316,16 +318,38 @@
     "neovim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1778023041,
-        "narHash": "sha256-sFr+wxSX3+IbKG428E5FenMEHWRYRy5epMutdUcPHF4=",
+        "lastModified": 1778266020,
+        "narHash": "sha256-qoydKalrn/QGsGYVRicz0Hzb7bfGmV7Z9CnVONXN/Lc=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "d0582fcc742ce61e5e22f19d7b097fb79ade40e7",
+        "rev": "b7d8a41d91dcfebe9a5f3d0cf2f0bb0b8d59e32e",
         "type": "github"
       },
       "original": {
         "owner": "neovim",
         "repo": "neovim",
+        "type": "github"
+      }
+    },
+    "nestvim": {
+      "inputs": {
+        "mnw": "mnw",
+        "neovim-nightly-overlay": "neovim-nightly-overlay",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1778512288,
+        "narHash": "sha256-K4d3uGhlz6f8MsrtYdnnPZe/Sq8lURcKNSACxlFDMkc=",
+        "owner": "codevogel",
+        "repo": "nestvim",
+        "rev": "2f6261c9e7dddced9c41862c216f83f4640852e5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "codevogel",
+        "repo": "nestvim",
         "type": "github"
       }
     },
@@ -418,8 +442,7 @@
         "elephant": "elephant",
         "gazelle": "gazelle",
         "home-manager": "home-manager",
-        "mnw": "mnw",
-        "neovim-nightly-overlay": "neovim-nightly-overlay",
+        "nestvim": "nestvim",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs",
         "nur": "nur",

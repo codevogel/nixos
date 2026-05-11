@@ -17,11 +17,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # minimal neovim wrapper, used to manage neovim plugins and configuration
-    mnw.url = "github:Gerg-L/mnw";
-    # neovim-nightly-overlay, provides neovim nightly builds
-    neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
+    nestvim = {
+      url = "github:codevogel/nestvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -67,30 +64,16 @@
       self,
       nixpkgs,
       stylix,
-      mnw,
       sops-nix,
+      nestvim,
       ...
     }@inputs:
     {
 
-      packages.x86_64-linux =
-
-        let
-          pkgs = import nixpkgs {
-            system = "x86_64-linux";
-            config.allowUnfree = true;
-          };
-
-          mnwPackages = import ./modules/mnw/mnw.nix {
-            inherit
-              pkgs
-              mnw
-              self
-              inputs
-              ;
-          };
-        in
-        mnwPackages;
+      packages.x86_64-linux = {
+        nestvim = nestvim.packages.x86_64-linux.default;
+        dev = nestvim.packages.x86_64-linux.dev;
+      };
 
       nixosConfigurations = {
         home-nest = nixpkgs.lib.nixosSystem {
