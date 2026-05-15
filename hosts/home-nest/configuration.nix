@@ -13,6 +13,11 @@
 
   hardware.nvidia.open = true;
 
+  boot.loader.systemd-boot.extraEntries."windows.conf" = ''
+    title Windows 11
+    efi /EFI/Microsoft/Boot/bootmgfw.efi
+  '';
+
   networking = {
     hostName = "home-nest";
     networkmanager = {
