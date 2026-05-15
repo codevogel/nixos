@@ -27,6 +27,7 @@ in
     };
 
     system = {
+      autoGarbageCollection.enable = mkFeat { default = true; };
       boot.enable = mkFeat { default = true; };
       git.enable = mkFeat { default = true; };
       locale.enable = mkFeat { default = true; };
