@@ -12,6 +12,7 @@
 
     wayland.windowManager.hyprland = {
       enable = true;
+      configType = "hyprlang"; # This needs at least hyprland 0.55 to support the new lua config format
       settings = {
         "$mainMod" = "SUPER";
         "$terminal" = "kitty";
