@@ -8,7 +8,13 @@
   config = lib.mkIf osConfig.my.features.system.hyprland.enable {
 
     # Hint electron apps to use WL
-    home.sessionVariables.NIXOS_OZONE_WL = "1";
+    home = {
+      sessionVariables.NIXOS_OZONE_WL = "1";
+      file.".local/share/icons/theme_Bibata" = {
+        source = ./cursor/theme_Bibata;
+        recursive = true;
+      };
+    };
 
     wayland.windowManager.hyprland = {
       enable = true;
@@ -17,6 +23,11 @@
         "$mainMod" = "SUPER";
         "$terminal" = "kitty";
         "$browser" = "firefox";
+
+        env = [
+          "HYPRCURSOR_THEME,theme_Bibata"
+          "HYPRCURSOR_SIZE,24"
+        ];
 
         #monitor = lib.mkIf osConfig.my.features.system.hyprland.settings.monitor.enable osConfig.my.features.system.hyprland.settings.monitor;
 
