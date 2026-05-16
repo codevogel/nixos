@@ -18,5 +18,6 @@
     ./apps/dev/vscode.nix
     ./apps/dev/lazygit.nix
     ./apps/dev/delta.nix
+    ./system/gtk.nix
   ];
 }
