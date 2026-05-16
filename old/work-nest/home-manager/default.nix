@@ -1,7 +1,0 @@
-{ ... }:
-
-{
-  imports = [
-    ./bluetooth/bluetui.nix
-  ];
-}
