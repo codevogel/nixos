@@ -10,8 +10,8 @@
     # Hint electron apps to use WL
     home = {
       sessionVariables.NIXOS_OZONE_WL = "1";
-      file.".local/share/icons/theme_Bibata" = {
-        source = ./cursor/theme_Bibata;
+      file.".local/share/icons/theme_codevogel" = {
+        source = ./cursor/theme_codevogel;
         recursive = true;
       };
     };
@@ -25,7 +25,7 @@
         "$browser" = "firefox";
 
         env = [
-          "HYPRCURSOR_THEME,theme_Bibata"
+          "HYPRCURSOR_THEME,theme_codevogel"
           "HYPRCURSOR_SIZE,24"
         ];
 
