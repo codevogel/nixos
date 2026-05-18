@@ -1,0 +1,7 @@
+{
+	"workspace": {
+		"library" : [
+			"$HYPRLAND_STUBS_PATH"
+		]
+	}
+}

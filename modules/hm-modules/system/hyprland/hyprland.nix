@@ -1,5 +1,6 @@
 {
   lib,
+  pkgs,
   osConfig,
   ...
 }:
@@ -7,134 +8,44 @@
 {
   config = lib.mkIf osConfig.my.features.system.hyprland.enable {
 
-    # Hint electron apps to use WL
     home = {
-      sessionVariables.NIXOS_OZONE_WL = "1";
+      sessionVariables = {
+        NIXOS_OZONE_WL = "1"; # Hint electron apps to use WL
+        HYPRLAND_STUBS_PATH = "${pkgs.hyprland}/share/hypr/stubs";
+      };
       file.".local/share/icons/theme_codevogel" = {
         source = ./cursor/theme_codevogel;
         recursive = true;
       };
-    };
 
-    wayland.windowManager.hyprland = {
-      enable = true;
-      configType = "hyprlang"; # This needs at least hyprland 0.55 to support the new lua config format
-      settings = {
-        "$mainMod" = "SUPER";
-        "$terminal" = "kitty";
-        "$browser" = "firefox";
-
-        env = [
-          "HYPRCURSOR_THEME,theme_codevogel"
-          "HYPRCURSOR_SIZE,24"
-        ];
-
-        #monitor = lib.mkIf osConfig.my.features.system.hyprland.settings.monitor.enable osConfig.my.features.system.hyprland.settings.monitor;
-
-        windowrule = [
-          {
-            name = "Godot Float Internal Windows";
-            "match:class" = "^Godot$";
-            tile = "off";
-            float = "on";
-          }
-          {
-            name = "Godot Tile Main Window";
-            "match:class" = "^Godot$";
-            "match:initial_title" = "^Godot$";
-            tile = "on";
-            float = "off";
-          }
-        ];
-
-        animation = [
-          "workspaces, 0"
-        ];
-
-        general = {
-          gaps_in = 0;
-          gaps_out = 0;
-          no_focus_fallback = true;
-          resize_on_border = true;
-          border_size = 1;
-        };
-
-        exec-once = [
-          "waybar"
-          "walker --gapplication-service"
-        ];
-
-        bind = [
-          # Close windows
-          "$mainMod SHIFT, C, killactive"
-
-          # Quit Hyprland
-          "$mainMod SHIFT, Q, exec, command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"
-
-          # Launch programs
-          "$mainMod, Return, exec, $terminal"
-          "$mainMod, R, exec, walker"
-          "$mainMod, B, exec, $browser"
-          "$mainMod, M, exec, spotify"
-
-          # Cycle through workspaces with mouse wheel
-          "$mainMod, mouse_down, workspace, e+1"
-          "$mainMod, mouse_up, workspace, e-1"
-
-          # Enter submaps
-          "$mainMod, W, submap, move_focus"
-          "$mainMod SHIFT, W, submap, resize_windows"
-
-          "$mainMod SHIFT, S, exec, peck --clipboard --temp --freeze"
-          "$mainMod SHIFT, R, exec, peck --record --clipboard --temp"
-          "$mainMod SHIFT, G, exec, peck --record --clipboard --temp --format=gif"
-
-          "$mainMod, F, fullscreen"
-        ]
-        ++ (
-          # workspaces
-          # binds $mod + [ shift +] {1..5} to [move to] workspace {1..5}
-          builtins.concatLists (
-            builtins.genList (
-              i:
-              let
-                ws = i + 1;
-              in
-              [
-                "$mainMod, code:1${toString i}, workspace, ${toString ws}"
-                "$mainMod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
-              ]
-            ) 5
-          )
-        );
+      file.".config/hypr/hyprland.lua" = {
+        source = ./config/hyprland.lua;
       };
-      submaps = {
-        move_focus = {
-          settings = {
-            bind = [
-              ", h, movefocus, l"
-              ", j, movefocus, d"
-              ", k, movefocus, u"
-              ", l, movefocus, r"
 
-              ", escape, submap, reset"
-            ];
-          };
-        };
-        resize_windows = {
-          settings = {
-            bind = [
-              ", h, resizeactive, -100 0"
-              ", j, resizeactive, 0 -100"
-              ", k, resizeactive, 0 100"
-              ", l, resizeactive, 100 0"
+      file.".config/hypr/codevogel" = {
+        source = ./config/codevogel;
+        recursive = true;
+      };
 
-              ", escape, submap, reset"
-            ];
-          };
-        };
+      file.".config/hypr/codevogel/monitors.lua" = {
+        text = lib.mkDefault ''
+          -- This file is a stub and should be overridden in
+          -- a host that requires specific montitor settings with something like:
+          --
+          --  home-manager.users.codevogel = {
+          --     home.file.".config/hypr/codevogel/monitors.lua" = lib.mkForce {
+          --     text = \'\'
+          --       hl.monitor({
+          --       	output = "DP-3",
+          --       	mode = "3440x1440@143.97",
+          --       	position = "0x0",
+          --       	scale = 1,
+          --       })
+          --     \'\';
+          --   };
+          -- };
+        '';
       };
     };
-
   };
 }

@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 
 {
   imports = [
@@ -17,6 +17,19 @@
     title Windows 11
     efi /EFI/Microsoft/Boot/bootmgfw.efi
   '';
+
+  home-manager.users.codevogel = {
+    home.file.".config/hypr/codevogel/monitors.lua" = lib.mkForce {
+      text = ''
+        hl.monitor({
+        	output = "DP-3",
+        	mode = "3440x1440@143.97",
+        	position = "0x0",
+        	scale = 1,
+        })
+      '';
+    };
+  };
 
   networking = {
     hostName = "home-nest";

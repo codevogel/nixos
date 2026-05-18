@@ -34,18 +34,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # elephant, a data provider service and backend for building custom application launchers and desktop utilities
-    elephant = {
-      url = "github:abenz1267/elephant";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    # walker, a multi-purpose launcher built on top of elephant
-    walker = {
-      url = "github:abenz1267/walker";
-      inputs.elephant.follows = "elephant";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # gazelle, a TUI for NetworkManager
     gazelle = {
       url = "github:Zeus-Deus/gazelle-tui";
