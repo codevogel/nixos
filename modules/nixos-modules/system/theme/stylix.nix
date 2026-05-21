@@ -10,7 +10,7 @@
     stylix = {
       enable = true;
       base16Scheme = ./kanagawa.yaml;
-      image = ./tunnel.jpg;
+      image = ./codevogel.png;
 
       fonts = {
         sizes.applications = lib.mkDefault 12;

@@ -8,7 +8,11 @@
 {
   config = lib.mkIf osConfig.my.features.system.hyprland.enable {
 
+    services.hyprpaper.enable = true;
+
     home = {
+      packages = [ pkgs.hyprpaper ];
+
       sessionVariables = {
         NIXOS_OZONE_WL = "1"; # Hint electron apps to use WL
         HYPRLAND_STUBS_PATH = "${pkgs.hyprland}/share/hypr/stubs";
