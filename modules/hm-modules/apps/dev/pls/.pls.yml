@@ -7,3 +7,5 @@ commands:
     command: ~/.config/tmux/startup/dev-default.sh
   - alias: dev-sv
     command: ~/.config/tmux/startup/dev-svelte.sh
+  - alias: rebuild
+    command: if [[ -z "$1" ]]; then sudo nixos-rebuild switch --flake ~/nixos#home-nest; else sudo nixos-rebuild switch --flake ~/nixos#"${1}"; fi
