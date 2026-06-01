@@ -40,6 +40,11 @@
         bind-key l select-pane -R
 
         set-option -g status-position top
+
+        set -g status-interval 1
+        set -g automatic-rename on
+        set -g automatic-rename-format '#{?#{==:#{pane_current_command},zsh},#{b:pane_current_path},#{pane_current_command}}'
+
       '';
     };
 
