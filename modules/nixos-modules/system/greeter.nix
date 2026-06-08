@@ -13,14 +13,7 @@
       settings = {
         default_session = {
           user = "greeter";
-          command = ''
-            ${pkgs.tuigreet}/bin/tuigreet \
-              --time \
-              --remember \
-              --remember-user-session \
-              --asterisks \
-              --cmd start-hyprland
-          '';
+          command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --remember-user-session --asterisks --cmd start-hyprland";
         };
       };
     };
