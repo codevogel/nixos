@@ -32,6 +32,13 @@ hl.bind(mainMod .. " + SHIFT + G", hl.dsp.exec_cmd("peck --record --clipboard --
 
 -- Window management
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
+hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.float({ action = "toggle" }))
+hl.config({ binds = { drag_threshold = 10 } })
+hl.bind("ALT + mouse:272", hl.dsp.window.drag(), { mouse = true, drag = true })
+hl.bind(mainMod .. " + Tab", function()
+	hl.dispatch(hl.dsp.window.cycle_next()) -- Change focus to another window
+	hl.dispatch(hl.dsp.window.bring_to_top()) -- Bring it to the top
+end)
 hl.bind(mainMod .. " + W", hl.dsp.submap("manageWindows"))
 hl.define_submap("manageWindows", function()
 	local step = 100
