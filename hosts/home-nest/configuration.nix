@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ pkgs, lib, ... }:
 
 {
   imports = [
@@ -18,6 +18,10 @@
     efi /EFI/Microsoft/Boot/bootmgfw.efi
   '';
 
+  users.users.codevogel = {
+    extraGroups = [ "camera" ];
+  };
+
   home-manager.users.codevogel = {
     home.file.".config/hypr/codevogel/monitors.lua" = lib.mkForce {
       text = ''
@@ -29,7 +33,14 @@
         })
       '';
     };
+
   };
+
+  programs.gphoto2.enable = true;
+  services.gvfs.enable = true;
+  security.polkit.enable = true;
+
+  environment.systemPackages = [ pkgs.darktable ];
 
   networking = {
     hostName = "home-nest";

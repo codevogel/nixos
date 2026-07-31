@@ -1,4 +1,5 @@
 {
+  pkgs,
   lib,
   osConfig,
   ...
@@ -10,6 +11,10 @@
       enable = true;
       enableZshIntegration = true;
       shellWrapperName = "yy";
+
+      plugins = {
+        gvfs = pkgs.yaziPlugins.gvfs;
+      };
     };
   };
 }
