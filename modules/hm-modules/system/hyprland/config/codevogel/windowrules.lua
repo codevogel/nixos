@@ -16,3 +16,13 @@ hl.window_rule({
 	tile = true,
 	float = false,
 })
+
+hl.window_rule({
+	name = "tvt clients",
+	match = {
+		initial_class = "tvt",
+	},
+	tile = true,
+	float = false,
+	workspace = 3,
+})
