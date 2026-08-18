@@ -45,6 +45,8 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-claude-code.url = "github:ryoppippi/nix-claude-code";
   };
 
   outputs =
@@ -54,6 +56,7 @@
       stylix,
       sops-nix,
       nestvim,
+      nix-claude-code,
       ...
     }@inputs:
     {
@@ -70,6 +73,17 @@
             ./hosts/home-nest/configuration.nix
             stylix.nixosModules.stylix
             sops-nix.nixosModules.sops
+            {
+              nixpkgs.overlays = [
+                nix-claude-code.overlays.default
+              ];
+
+              nixpkgs.config.allowUnfreePredicate =
+                pkg:
+                builtins.elem (nixpkgs.lib.getName pkg) [
+                  "claude"
+                ];
+            }
           ];
         };
 
@@ -88,6 +102,17 @@
             ./hosts/work-nest/configuration.nix
             stylix.nixosModules.stylix
             sops-nix.nixosModules.sops
+            {
+              nixpkgs.overlays = [
+                nix-claude-code.overlays.default
+              ];
+
+              nixpkgs.config.allowUnfreePredicate =
+                pkg:
+                builtins.elem (nixpkgs.lib.getName pkg) [
+                  "claude"
+                ];
+            }
           ];
         };
 
@@ -97,6 +122,17 @@
             ./hosts/work-nest/wsl/configuration.nix
             stylix.nixosModules.stylix
             sops-nix.nixosModules.sops
+            {
+              nixpkgs.overlays = [
+                nix-claude-code.overlays.default
+              ];
+
+              nixpkgs.config.allowUnfreePredicate =
+                pkg:
+                builtins.elem (nixpkgs.lib.getName pkg) [
+                  "claude"
+                ];
+            }
           ];
         };
       };

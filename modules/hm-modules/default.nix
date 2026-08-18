@@ -18,7 +18,7 @@
     ./apps/dev/vscode.nix
     ./apps/dev/lazygit.nix
     ./apps/dev/delta.nix
-    ./system/gtk.nix
     ./apps/dev/claude-code/claude-code.nix
+    ./system/gtk.nix
   ];
 }
