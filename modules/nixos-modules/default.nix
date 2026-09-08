@@ -34,5 +34,6 @@
     ./apps/dev/vhs.nix
     ./apps/media/vlc.nix
     ./system/nix-ld.nix
+    ./apps/dev/htop.nix
   ];
 }
