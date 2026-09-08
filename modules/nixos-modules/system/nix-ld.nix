@@ -15,6 +15,7 @@
           zlib
           openssl
           icu
+          ncurses
         ]
       );
     };
