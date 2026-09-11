@@ -73,6 +73,15 @@
           ];
         };
 
+        home-nest-wsl = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs self; };
+          modules = [
+            ./hosts/home-nest/wsl/configuration.nix
+            stylix.nixosModules.stylix
+            sops-nix.nixosModules.sops
+          ];
+        };
+
         work-nest = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs self; };
           modules = [
