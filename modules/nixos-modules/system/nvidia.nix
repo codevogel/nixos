@@ -12,7 +12,7 @@
     hardware.nvidia.nvidiaSettings = true;
     hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
     hardware.nvidia.powerManagement.enable = true;
-    services.xserver.videoDrivers = [ "nvidia" ];
+    services.xserver.videoDrivers = lib.mkDefault [ "nvidia" ];
 
     # These are for Hyprland but might be useful for other programs too(?)
     environment.variables = {

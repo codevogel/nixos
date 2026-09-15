@@ -7,6 +7,17 @@
   ];
 
   my.features.system.hyprland.waybar.laptopModules.enable = true;
+  my.features.system.nvidia.enable = true;
+
+  services.xserver.videoDrivers = lib.mkForce [ "modesetting" ];
+  hardware.nvidia.prime = {
+    offload = {
+      enable = true;
+      enableOffloadCmd = true;
+    };
+    intelBusId = "PCI:0:2:0";
+    nvidiaBusId = "PCI:1:0:0";
+  };
 
   stylix = {
     fonts = {
