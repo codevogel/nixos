@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ lib, config, pkgs, ... }:
 
 {
   imports = [
@@ -24,7 +24,9 @@
     };
   };
 
-  home-manager.users."codevogel" = {
+  home-manager.users."codevogel" =
+    { lib, pkgs, ... }:
+    {
     wayland.windowManager.hyprland = {
       settings = {
         monitor = [
@@ -36,6 +38,20 @@
         };
       };
     };
+
+    # Unity 6000.6+ UnityShaderCompiler links libdxcompiler.so, which NEEDS
+    # libtinfo.so.6 via RUNPATH $ORIGIN/../lib (Editor/Data/lib), a dir the
+    # Unity Editor download doesn't ship. RUNPATH is resolved by the dynamic
+    # loader independent of LD_LIBRARY_PATH/env, so symlink it in directly.
+    # See: https://github.com/NixOS/nixpkgs/issues/561247
+    home.activation.unityShaderCompilerLibtinfoFix = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      shopt -s nullglob
+      for tools in "$HOME"/Unity/Hub/Editor/*/Editor/Data/Tools; do
+        libDir="$tools/../lib"
+        run mkdir -p "$libDir"
+        run ln -sf "${pkgs.ncurses}/lib/libtinfo.so.6" "$libDir/libtinfo.so.6"
+      done
+    '';
 
     home.file.".config/hypr/codevogel/monitors.lua" = {
       text = lib.mkForce ''
