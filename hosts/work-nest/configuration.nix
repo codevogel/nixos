@@ -9,7 +9,6 @@
   my.features.system.hyprland.waybar.laptopModules.enable = true;
   my.features.system.nvidia.enable = true;
 
-  services.xserver.videoDrivers = lib.mkForce [ "modesetting" ];
   hardware.nvidia.prime = {
     offload = {
       enable = true;
