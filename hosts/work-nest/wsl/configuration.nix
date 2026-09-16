@@ -21,6 +21,8 @@
       wsl.enable = true;
     };
 
+    apps.dev.claude-code.enable = true;
+
     system = {
       boot.enable = false;
       networking.enable = false;
