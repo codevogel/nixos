@@ -321,11 +321,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785495905,
-        "narHash": "sha256-SVtOEMv+yMq2bSBdDFF74O86baKsFZkC1iNvSpZd/7Y=",
+        "lastModified": 1789475726,
+        "narHash": "sha256-mXpsC+QT0JcRQtcuJ2xFg463F5U9Gq2kFd6HPmsHJeQ=",
         "owner": "codevogel",
         "repo": "nestvim",
-        "rev": "cb6c3d3461bd7194e01eaaeb14ba2d7dbb5f1e14",
+        "rev": "531cabc40121de8b951fd7857fb60b69361c508f",
         "type": "github"
       },
       "original": {
