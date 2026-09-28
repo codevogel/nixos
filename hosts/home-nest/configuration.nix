@@ -12,10 +12,21 @@
 
   hardware.nvidia.open = true;
 
-  boot.loader.systemd-boot.extraEntries."windows.conf" = ''
-    title Windows 11
-    efi /EFI/Microsoft/Boot/bootmgfw.efi
-  '';
+  boot.loader.limine = {
+    extraEntries = ''
+      /Windows 11
+        protocol: efi
+        # Boot partition of the Windows disk, so Windows updates apply
+        path: guid(de866feb-f47a-405f-bd67-12e0dae565cb):/EFI/Microsoft/Boot/bootmgfw.efi
+    '';
+    # Sign Limine with our own sbctl keys; Microsoft keys stay enrolled
+    # so Windows keeps booting.
+    secureBoot = {
+      enable = true;
+      autoGenerateKeys = true;
+      autoEnrollKeys.enable = true;
+    };
+  };
 
   users.users.codevogel = {
     extraGroups = [ "camera" ];
