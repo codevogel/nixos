@@ -8,6 +8,7 @@
 
   my.features.system.hyprland.waybar.laptopModules.enable = true;
   my.features.system.nvidia.enable = true;
+  my.features.apps.steam.enable = true;
 
   hardware.nvidia.prime = {
     offload = {
