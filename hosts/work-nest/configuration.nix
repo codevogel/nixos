@@ -59,7 +59,7 @@
           output = "eDP-1",
           mode = "preferred",
           position = "1920x0",
-          scale = 1.2,
+          scale = 1,
         })
         hl.monitor({
           output = "DP-1",
