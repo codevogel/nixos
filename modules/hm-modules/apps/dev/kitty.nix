@@ -10,6 +10,10 @@
       {
         programs.kitty = {
           enable = true;
+          settings = {
+            # Otherwise kitty restores a cached maximized state, which breaks tiling
+            remember_window_size = "no";
+          };
         };
       };
 }
