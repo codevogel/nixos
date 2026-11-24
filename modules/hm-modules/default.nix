@@ -19,6 +19,7 @@
     ./apps/dev/lazygit.nix
     ./apps/dev/delta.nix
     ./apps/dev/claude-code/claude-code.nix
+    ./apps/dev/lazydocker.nix
     ./system/gtk.nix
   ];
 }

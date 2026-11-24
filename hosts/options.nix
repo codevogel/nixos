@@ -96,6 +96,7 @@ in
         pls.enable = mkFeat { default = f.apps.dev.enable; };
         claude-code.enable = mkFeat { default = f.apps.dev.enable; };
         htop.enable = mkFeat { default = f.apps.dev.enable; };
+        docker.enable = mkFeat { default = f.apps.dev.enable; };
 
         # GUI
         kitty.enable = mkFeat { default = f.apps.dev.enable && f.profiles.desktop.enable; };
